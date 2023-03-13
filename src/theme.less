@@ -34,17 +34,18 @@
   padding-bottom: 1rem;
 }
 
-.content-inner.library-artists-page
-  .inner-container
-  .list-container
-  .podcasts-list {
-  background: @mantle;
-}
-
 // buttons, switches, widgets
 .md-select,
-.md-btn {
-  background: @surface1;
+.md-btn,
+.more-btn-round,
+.search-btn,
+.reload-btn,
+.md-input-number > input {
+  background: @surface1 !important;
+  color: @text;
+  &::placeholder {
+    color: @subtext0;
+  }
 }
 
 input[type="checkbox"][switch] {
@@ -57,13 +58,25 @@ input[type="checkbox"][switch] {
   }
 }
 
+.content-inner input[type="search"] {
+  background: @surface1;
+  color: @text;
+  &::placeholder {
+    color: @subtext0;
+  }
+}
+
 .search-input:focus {
   border-color: var(--keyColor);
 }
+.app-chrome-item.search input {
+  background: @crust !important;
+}
 
 .md-btn.md-btn-primary {
-  background: @red;
-  color: @crust;
+  background: var(--keyColor) !important;
+  border-color: var(--keyColor) !important;
+  color: @crust !important;
 }
 
 // the Home/Listen Now/Browse/Radio buttons
@@ -71,5 +84,21 @@ input[type="checkbox"][switch] {
   .app-chrome:not(.chrome-bottom)
   .app-chrome--center
   .top-nav-group {
-  background: @mantle;
+  background: @crust;
+}
+
+.app-chrome.chrome-bottom {
+  background: @crust !important;
+}
+
+.playback-button--small:hover::before {
+  background: fade(@crust, 40%);
+}
+
+.podcasts-list,
+.podcasts-search {
+  background: @mantle !important;
+}
+.podcast-list-header {
+  background: @crust !important;
 }
