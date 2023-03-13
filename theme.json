@@ -1,0 +1,29 @@
+{
+  "name": "Catppuccin Theme",
+  "description": "Catppuccin theme for Cider",
+  "version": "0.1.0",
+  "author": "Catppuccin Org",
+  "github_repo": "catppuccin/cider",
+  "pack": [
+    {
+      "name": "Mocha",
+      "file": "src/mocha.less",
+      "description": "Catppuccin - Mocha"
+    },
+    {
+      "name": "Macchiato",
+      "file": "src/macchiato.less",
+      "description": "Catppuccin - Macchiato"
+    },
+    {
+      "name": "Frappe",
+      "file": "src/frappe.less",
+      "description": "Catppuccin - Frappe"
+    },
+    {
+      "name": "Latte",
+      "file": "src/latte.less",
+      "description": "Catppuccin - Latte"
+    }
+  ]
+}

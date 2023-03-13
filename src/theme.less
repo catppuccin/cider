@@ -1,0 +1,75 @@
+:root {
+  --baseColor: @base !important;
+  --baseColorMix: @mantle !important;
+  --sidebarColor: @crust !important;
+  --sidebarColorMix: @crust !important;
+  --ciderColor: @red !important;
+  --modalBackground: @base !important;
+  --textColor: @text !important;
+  --selected: @surface0 !important;
+  --keyColor: @blue !important;
+  --keyColor-rollover: lighten(@blue, 2%) !important;
+}
+
+.settings-panel {
+  backdrop-filter: blur(2px);
+  background: fade(@mantle, 50%);
+  .settings-window {
+    background: @mantle;
+    .tab-content {
+      background: @base;
+    }
+    .list-group-item-dark {
+      background-color: @surface0;
+    }
+  }
+}
+.cd-mediaitem-list-item:hover {
+  background: fade(@surface2, 30%);
+}
+
+.album-header {
+  background: fade(@mantle, 50%);
+  border-bottom: unset;
+  padding-bottom: 1rem;
+}
+
+.content-inner.library-artists-page
+  .inner-container
+  .list-container
+  .podcasts-list {
+  background: @mantle;
+}
+
+// buttons, switches, widgets
+.md-select,
+.md-btn {
+  background: @surface1;
+}
+
+input[type="checkbox"][switch] {
+  background: @surface1;
+  &::before {
+    background: @text;
+  }
+  &:checked::before {
+    background: @text;
+  }
+}
+
+.search-input:focus {
+  border-color: var(--keyColor);
+}
+
+.md-btn.md-btn-primary {
+  background: @red;
+  color: @crust;
+}
+
+// the Home/Listen Now/Browse/Radio buttons
+#app.twopanel
+  .app-chrome:not(.chrome-bottom)
+  .app-chrome--center
+  .top-nav-group {
+  background: @mantle;
+}
