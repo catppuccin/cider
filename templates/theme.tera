@@ -1,0 +1,22 @@
+---
+whiskers:
+  version: "2.1.0"
+  matrix:
+    - flavor
+    - accent
+  filename: "themes/{{flavor.identifier}}/{{accent}}/theme.json"
+app: 'Cider'
+author: 'eli.grmr'
+---
+
+{
+  "author": "Catppuccin",
+  "identifier": "com.catppuccin.{{flavor.identifier}}-{{accent}}",
+  "name": "Catppuccin",
+  "styles": [
+      {
+        "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}}",
+        "entry": "catppuccin-{{flavor.identifier}}-{{accent}}.scss"
+      }        
+  ]
+}
