@@ -37,8 +37,8 @@
 ## Usage
 
 1. Open Cider
-2. Install the theme via Settings > Styles > Explore GitHub Themes > "Catppuccin Theme for Cider"
-3. Activate **a single flavor** in Settings > Styles, **don't enable** "Catppuccin Theme" itself.
+2. Go to Settings > Experiments > Enable Theme Support
+3. Go to Theme Manager > Install from File (Pick your desired .cider-theme file from the /themes directory in this repo)
 
 ## 💝 Thanks to
 
