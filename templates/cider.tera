@@ -743,6 +743,10 @@ body.body--dark {
         .lyric-word {
           color: var(--accent);
         }
+        
+        .lyric-text {
+          color: var(--accent);
+        }
       }
     }
 
@@ -783,6 +787,7 @@ body.body--dark {
         background-color: var(--text);
       }
     }
+  }
   // Coverflow Mode
   .coverflow-player {
     [sfc-name='MojavePlayer'] {
