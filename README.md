@@ -36,9 +36,13 @@
 
 ## Usage
 
-1. Open Cider
-2. Go to Settings > Experiments > Enable Theme Support
-3. Go to Theme Manager > Install from File (Pick your desired .cider-theme file from the /themes directory in this repo)
+1. Download your preferred flavor and accent from the [themes](themes/) directory.
+2. Open Cider
+3. Go to Settings → Experiments → Enable Theme Support.
+4. Go to Theme Manager → Install from File → (Your downloaded theme file).
+5. Go to Settings → Visual → Color Scheme:
+   - Use **Light** if using Latte.
+   - Use **Dark** if using Frappé, Macchiato, or Mocha.
 
 ## 💝 Thanks to
 
