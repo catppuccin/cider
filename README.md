@@ -44,6 +44,12 @@
    - Use **Light** if using Latte.
    - Use **Dark** if using Frappé, Macchiato, or Mocha.
 
+## Notes
+
+### Immersive / Coverflow Mode
+
+Immersive and Coverflow modes uses **dark-mode** theming in-app. If you're using a Latte theme, it is recommended that you also **enable** a dark-mode theme (Frappé / Macchiato / Mocha) to have theming inside the Immersive and Coverflow modes.
+
 ## 💝 Thanks to
 
 - [winston](https://github.com/nekowinston)
