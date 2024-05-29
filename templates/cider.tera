@@ -783,7 +783,45 @@ body.body--dark {
         background-color: var(--text);
       }
     }
-  } 
+  // Coverflow Mode
+  .coverflow-player {
+    [sfc-name='MojavePlayer'] {
+      .overlay-progress-track {
+        background: var(--surface0);
+      }
+
+      .overlay-progress-bar {
+        --progressColor: var(--text);
+      }
+    }
+    // Sing 
+    .lyricView {
+      .lyric-word {
+        --defaultColor: var(--text);
+        --gradientColor: var(--accent); 
+      }
+
+      .lyric-text {
+        color: var(--text);
+      }
+
+      .active {
+        .lyric-text {
+          color: var(--accent);
+        }
+      }
+
+      .finished {
+        .lyric-word {
+          color: var(--accent);
+        }
+        
+        .lyric-text {
+          color: var(--accent);
+        }
+      }
+    }
+  }
   // Miniplayer
   [sfc-name='MiniPlayerLayout'] {
     [sfc-name='MiniPlayerControls'] {
