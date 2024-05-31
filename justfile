@@ -3,15 +3,15 @@ _default:
 
 release_dir := "themes"
 whiskers_cmd := "whiskers"
-themekit_cmd := "npm run build"
+themekit_cmd := "npm --prefix ./cider-themekit run build"
 template_path := "templates"
 
 clean:
     rm -rfv {{release_dir}}
 
 build: build-dev
-    for processing_dir in `ls -d themes/*/*/`; do \
-        {{themekit_cmd}} $processing_dir; \
+    for processing_dir in `ls -d themes/*/*`; do \
+        {{themekit_cmd}} ../$processing_dir; \
         find $processing_dir -maxdepth 1 -type f -delete; \
         mv $processing_dir/dist/theme.cider-theme $(dirname $processing_dir)/$(basename $(dirname $processing_dir))-$(basename $processing_dir).cider-theme; \
         rm -rf $processing_dir; \
