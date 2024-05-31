@@ -12,37 +12,48 @@
 </p>
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/cider/main/assets/preview.webp"/>
+	<img src="assets/preview.webp"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/cider/main/assets/latte.webp"/>
+<img src="assets/latte.webp"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/cider/main/assets/frappe.webp"/>
+<img src="assets/frappe.webp"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/cider/main/assets/macchiato.webp"/>
+<img src="assets/macchiato.webp"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/cider/main/assets/mocha.webp"/>
+<img src="assets/mocha.webp"/>
 </details>
 
 ## Usage
 
-1. Open Cider
-2. Install the theme via Settings > Styles > Explore GitHub Themes > "Catppuccin Theme for Cider"
-3. Activate **a single flavor** in Settings > Styles, **don't enable** "Catppuccin Theme" itself.
+1. Download your preferred flavor and accent from the [themes](themes/) directory.
+2. Open Cider
+3. Go to Settings → Experiments → Enable Theme Support.
+4. Go to Theme Manager → Install from File → (Your downloaded theme file).
+5. Go to Settings → Visual → Color Scheme:
+   - Use **Light** if using Latte.
+   - Use **Dark** if using Frappé, Macchiato, or Mocha.
+
+## Notes
+
+### Immersive / Coverflow Mode
+
+Immersive and Coverflow modes uses **dark-mode** theming in-app. If you're using a Latte theme, it is recommended that you also **enable** a dark-mode theme (Frappé / Macchiato / Mocha) to have theming inside the Immersive and Coverflow modes.
 
 ## 💝 Thanks to
 
 - [winston](https://github.com/nekowinston)
+- [Eli](https://github.com/Flapperoo)
 
 &nbsp;
 

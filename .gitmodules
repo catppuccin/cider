@@ -1,0 +1,3 @@
+[submodule "cider-themekit"]
+	path = cider-themekit
+	url = https://github.com/ciderapp/cider-themekit
