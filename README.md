@@ -53,6 +53,7 @@ Immersive and Coverflow modes uses **dark-mode** theming in-app. If you're using
 ## 💝 Thanks to
 
 - [winston](https://github.com/nekowinston)
+- [Eli](https://github.com/Flapperoo)
 
 &nbsp;
 
