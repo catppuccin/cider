@@ -17,7 +17,7 @@ body.body--light {
 {% if flavor.identifier == 'frappe' or flavor.identifier == 'macchiato' or flavor.identifier == 'mocha' %}
 body.body--dark {
 {% endif %}
-{%- set selectioncolor = palette.overlay2 | mod(opacity=0.3) -%}  
+{%- set selectioncolor = palette.overlay2 | mod(opacity=0.3) -%}
   --accent: #{{palette[accent].hex}};
   --text: #{{palette.text.hex}};
   --subtext1: #{{palette.subtext1.hex}};
@@ -60,14 +60,32 @@ body.body--dark {
     [sfc-name='MojavePlayer'] {
       .overlay-progress-bar {
         --progressColor: var(--text);
+        background: var(--text);
       }
 
       .player {
         background: var(--mantle);
       }
     }
+  }
 
-    --contextMenuTextColor: var(--text);
+  #app-viewport[data-layout-type="mojave-if"] {
+    .chrome-top {
+      background: var(--base);
+    }
+
+    [sfc-name='MojavePlayer'] {
+      background: var(--base);
+
+      .overlay-progress-bar {
+        --progressColor: var(--text);
+        background: var(--text);
+      }
+
+      .player {
+        background: var(--mantle);
+      }
+    }
   }
 
   #app-viewport[data-layout-type="maverick"] {
@@ -82,26 +100,6 @@ body.body--dark {
     }
 
     --contextMenuTextColor: var(--text);
-  }
-
-  #app-viewport[data-layout-type="mojave-if"] {
-    .chrome-top {
-      background: var(--base);
-    }
-
-    [sfc-name='MojavePlayer'] {
-      background: var(--base);
-      
-      .player {
-        background: var(--mantle);
-      }
-    }
-
-    [sfc-name='AMProgressBar'] {
-      .overlay-progress-bar {
-        --progressColor: var(--text);
-      }
-    }
   }
 
   #app-viewport[data-layout-type="maverick-if"] {
@@ -126,7 +124,7 @@ body.body--dark {
 
   .q-menu {
     background: var(--base);
-    
+
     .q-hoverable:hover {
       background: var(--selection-bg);
     }
@@ -142,39 +140,36 @@ body.body--dark {
         color: var(--text);
       }
     }
-
-    // Switch
-    input[type=checkbox][switch] {
-      background: var(--overlay0);
-    }
-
-    input[type=checkbox][switch]:checked {
-      background: var(--accent);
-    }
-
-    input[type=checkbox][switch]:before {
-      background: var(--crust);
-    }
-    // Select Box
-    [sfc-name='CSelect'] {
-      .c-select {
-        background-color: var(--crust);
-        border-color: var(--selection-bg);
-        color: var(--text);
-      }            
-    }
-
-    [data-v-c081d946] {
-      background-color: var(--crust);
-      border-color: var(--selection-bg);
-      color: var(--text);
-    }
-
+    // For pop-up volume sliders
     [sfc-name='AMVolumeSlider'] {
       .overlay-progress-bar {
         background: var(--text);
       }
     }
+  }
+  // Select Box
+  [sfc-name='CSelect'] {
+    .c-select, [data-v-c081d946] {
+      background-color: var(--crust);
+      border-color: var(--selection-bg);
+      color: var(--text);
+    }
+
+    .c-select--label {
+      background-color: var(--base)
+    }
+  }
+  // Switch
+  input[type=checkbox][switch] {
+    background: var(--overlay0);
+  }
+
+  input[type=checkbox][switch]:checked {
+    background: var(--accent);
+  }
+
+  input[type=checkbox][switch]:before {
+    background: var(--crust);
   }
 
   [sfc-name='HeaderSearch'] {
@@ -198,27 +193,27 @@ body.body--dark {
     .settings-window {
       [sfc-name='QToolbar'] {
         background: var(--crust);
-          
+
         .q-tab__indicator {
           background: var(--selection-bg);
         }
       }
-  
+
       [sfc-name='QLayout'] {
         background: var(--crust);
       }
-  
+
       .bg-primary {
         background: var(--selection-bg);
       }
-  
+
       [sfc-name='QList'] {
         background: var(--base);
-  
+
         .q-item__label {
           color: var(--text);
         }
-  
+
         .q-item__label--header {
           color: var(--overlay1);
         }
@@ -228,7 +223,7 @@ body.body--dark {
             background: var(--selection-bg);
           }
         }
-        
+
         // Dropdowns
         [sfc-name='QSlideTransition'] {
           background: var(--mantle);
@@ -240,22 +235,8 @@ body.body--dark {
             .q-field__control {
               background: var(--crust);
               border-color: var(--selection-bg);
-            }            
+            }
             .q-field__native {
-              color: var(--text);
-            }
-          }
-          // Select Box 
-          [sfc-name='CSelect'] {
-            .c-select {
-              background-color: var(--crust);
-              border-color: var(--selection-bg);
-              color: var(--text);
-            }
-            // Animated Artwork Quality Level QuickFix
-            [data-v-c081d946] {
-              background-color: var(--crust);
-              border-color: var(--selection-bg);
               color: var(--text);
             }
           }
@@ -263,38 +244,22 @@ body.body--dark {
           [sfc-name='QIcon'] {
             color: var(--text);
           }
-          // Switch
-          input[type=checkbox][switch] {
-            background: var(--overlay0);
-          }
-
-          input[type=checkbox][switch]:checked {
-            background: var(--accent);
-          }
-
-          input[type=checkbox][switch]:before {
-            background: var(--crust);
-          }
 
           [sfc-name='QBtn'] {
-            background: var(--accent);    
-            color: var(--base);    
-            // Stream Deck Plugin Button QuickFix
-            .block {
-              color: var(--base);
-            }
-    
-            [sfc-name='QIcon'] {
+            background: var(--accent);
+            color: var(--base);
+
+            .block, [sfc-name='QIcon'] {
               color: var(--base);
             }
           }
         }
       }
-  
+
       --q-dark: var(--base);
-  
+
       [sfc-name='QCard'] {
-        color: var(--text);        
+        color: var(--text);
       }
     }
     // Updates Window
@@ -318,49 +283,21 @@ body.body--dark {
       // Internal Middle Pane
       .versions-list {
         background-color: var(--crust);
-        // Switches
-        input[type=checkbox][switch] {
-          background: var(--overlay0);
-        }
 
-        input[type=checkbox][switch]:checked {
-          background: var(--accent);
-        }
-
-        input[type=checkbox][switch]:before {
-          background: var(--crust);
-        }
-
-        .bg-primary {
+        .bg-primary, .q-hoverable:hover {
           background: var(--selection-bg);
         }
 
-        .q-hoverable:hover {
-          background: var(--selection-bg);
-        }
-
-        [sfc-name='QIcon'] {
+        [sfc-name='QIcon'], [sfc-name='QItemLabel'] {
           color: var(--text);
-        }
-
-        [sfc-name='QItemLabel'] {
-          color: var(--text);
-        } 
-        // Select Box
-        [sfc-name='CSelect'] {
-          .c-select {
-            background-color: var(--crust);
-            border-color: var(--selection-bg);
-            color: var(--text);
-          }            
         }
         // Buttons
         [sfc-name='QBtn'] {
           background: var(--accent);
-    
+
           .q-btn__content {
             color: var(--base);
-          } 
+          }
         }
       }
 
@@ -382,23 +319,9 @@ body.body--dark {
 
       [sfc-name='QBtn'] {
         background: var(--accent);
-  
+
         .q-btn__content {
           color: var(--base);
-        } 
-      }
-
-      [sfc-name='CSelect'] {
-        .c-select {
-          background-color: var(--crust);
-          border-color: var(--selection-bg);
-          color: var(--text);
-        }
-        // Untagged SFC Select Boxes QuickFix
-        [data-v-c081d946] {
-          background-color: var(--crust);
-          border-color: var(--selection-bg);
-          color: var(--text);
         }
       }
     }
@@ -412,15 +335,7 @@ body.body--dark {
     }
 
     [sfc-name='ListItem'] {
-      .artist-text {
-        color: var(--subtext1);
-      }
-
-      .albumLink {
-        color: var(--subtext1);
-      }
-
-      .time {
+      .artist-text, .albumLink, .time {
         color: var(--subtext1);
       }
     }
@@ -432,11 +347,7 @@ body.body--dark {
         }
       }
 
-      [sfc-name='QIcon'] {
-        color: var(--accent);
-      }
-
-      [sfc-name='VueFeather'] {
+      [sfc-name='QIcon'], [sfc-name='VueFeather'] {
         color: var(--accent);
       }
     }
@@ -477,7 +388,7 @@ body.body--dark {
         color: var(--accent);
       }
     }
-    
+
     .sidebar-label {
       opacity: 1;
     }
@@ -487,7 +398,7 @@ body.body--dark {
     .lyric-view {
       .lyric-word {
         --defaultColor: var(--text);
-        --gradientColor: var(--accent); 
+        --gradientColor: var(--accent);
       }
 
       .lyric-text {
@@ -515,7 +426,7 @@ body.body--dark {
 
     [sfc-name='QCard'] {
       background: var(--crust);
-    }    
+    }
 
     [sfc-name='AMQueueItem'] {
       .qmd-title-text {
@@ -540,7 +451,7 @@ body.body--dark {
 
     [sfc-name='QTabs'] {
       background: var(--base);
-      
+
       .q-tab {
         color: var(--text);
       }
@@ -563,10 +474,10 @@ body.body--dark {
         background: var(--accent);
       }
 
-      [sfc-name='QBtn'] {  
+      [sfc-name='QBtn'] {
         .q-btn__content {
           color: var(--base);
-        } 
+        }
       }
 
       [sfc-name='QItemSection'] {
@@ -588,104 +499,43 @@ body.body--dark {
 
     .tm-card {
       background: var(--base);
-      // Switch
-      input[type=checkbox][switch] {
-        background: var(--overlay0);
-      }
 
-      input[type=checkbox][switch]:checked {
-        background: var(--accent);
-      }
-
-      input[type=checkbox][switch]:before {
-        background: var(--crust);
-      }
-
-      // Select Box 
-      [sfc-name='CSelect'] {
-        .c-select {
-          background-color: var(--crust);
-          border-color: var(--selection-bg);
-          color: var(--text);
-        }
-        // Untagged SFC Select Boxes QuickFix
-        [data-v-c081d946] {
-          background-color: var(--crust);
-          border-color: var(--selection-bg);
-          color: var(--text);
-        }
-
-        .c-select--label {
-          background-color: var(--base)
-        }
-      }
-  
       [sfc-name='QBtn'] {
         background: var(--accent);
-  
+
         .q-btn__content {
           color: var(--base);
-        } 
+        }
       }
-      
+
       [sfc-name='QList'] {
         .bg-primary {
           background: var(--selection-bg);
         }
-  
+
         [sfc-name='QItemSection'] {
           .q-item__label {
             color: var(--text);
           }
-  
+
           .text-caption {
             color: var(--subtext1)
-          } 
+          }
         }
-      }
-    } 
-    
-    .am-audio-settings {
-      background: var(--base);
-
-      [sfc-name='CSelect'] {
-        .c-select {
-          background-color: var(--crust);
-          border-color: var(--selection-bg);
-          color: var(--text);
-        }
-        // Untagged SFC Select Boxes QuickFix
-        [data-v-c081d946] {
-          background-color: var(--crust);
-          border-color: var(--selection-bg);
-          color: var(--text);
-        }
-
-        .c-select--label {
-          background-color: var(--base)
-        }
-      }
-      // Switch
-      input[type=checkbox][switch] {
-        background: var(--overlay0);
-      }
-
-      input[type=checkbox][switch]:checked {
-        background: var(--accent);
-      }
-
-      input[type=checkbox][switch]:before {
-        background: var(--crust);
       }
     }
-  }   
+
+    .am-audio-settings {
+      background: var(--base);
+    }
+  }
   // Immersive Mode
   .immersive-player {
     [sfc-name='AMPMetadataMojave'] {
       .song-name {
         color: var(--text);
       }
-  
+
       .release-info {
         color: var(--subtext1);
       }
@@ -693,7 +543,7 @@ body.body--dark {
 
     [sfc-name='QTabs'] {
       background: var(--base);
-      
+
       .q-tab {
         color: var(--text);
       }
@@ -706,7 +556,7 @@ body.body--dark {
         background: var(--selection-bg);
       }
     }
-    
+
     [sfc-name='AMQueueItem'] {
       .qmd-title-text {
         color: var(--text);
@@ -726,7 +576,7 @@ body.body--dark {
     .lyricView {
       .lyric-word {
         --defaultColor: var(--text);
-        --gradientColor: var(--accent); 
+        --gradientColor: var(--accent);
       }
 
       .lyric-text {
@@ -740,11 +590,7 @@ body.body--dark {
       }
 
       .finished {
-        .lyric-word {
-          color: var(--accent);
-        }
-        
-        .lyric-text {
+        .lyric-word, .lyric-text {
           color: var(--accent);
         }
       }
@@ -799,11 +645,11 @@ body.body--dark {
         --progressColor: var(--text);
       }
     }
-    // Sing 
+    // Sing
     .lyricView {
       .lyric-word {
         --defaultColor: var(--text);
-        --gradientColor: var(--accent); 
+        --gradientColor: var(--accent);
       }
 
       .lyric-text {
@@ -817,11 +663,7 @@ body.body--dark {
       }
 
       .finished {
-        .lyric-word {
-          color: var(--accent);
-        }
-        
-        .lyric-text {
+        .lyric-word, .lyric-text {
           color: var(--accent);
         }
       }
@@ -870,11 +712,7 @@ body.body--dark {
       }
     }
 
-    .artist-toolbar {
-      background: var(--mantle);
-    }
-
-    .q-page {
+    .artist-toolbar, .q-page {
       background: var(--mantle);
     }
   }
