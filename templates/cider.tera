@@ -347,6 +347,10 @@ body.body--dark {
 
       [sfc-name='QIcon'], [sfc-name='VueFeather'] {
         color: var(--accent);
+
+        [fill=white] {
+          fill: var(--accent);
+        }
       }
     }
 
