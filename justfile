@@ -6,11 +6,14 @@ dist := "themes"
 clean:
   rm -rfv {{dist}}
 
-build: clean
-  #!/usr/bin/env bash
+alias dev := whiskers
+
+whiskers: clean
   whiskers templates/cider.tera
   whiskers templates/theme.tera
 
+build: whiskers
+  #!/usr/bin/env bash
   for theme in `ls -d {{dist}}/*/*`; do
     npm --prefix ./cider-themekit run build ../$theme;
     find $theme -maxdepth 1 -type f -delete;
