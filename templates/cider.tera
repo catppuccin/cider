@@ -4,30 +4,21 @@ whiskers:
   matrix:
     - flavor
     - accent
-  filename: "themes/{{flavor.identifier}}/{{accent}}/catppuccin-{{flavor.identifier}}-{{accent}}.scss"
-app: 'Cider'
-author: 'eli.grmr'
+  filename: "themes/{{ flavor.identifier }}/{{ accent }}/catppuccin-{{ flavor.identifier }}-{{ accent }}.scss"
 ---
-// Catppuccin Theme for {{app}}
-// By {{author}}
-{% if flavor.identifier == 'latte' %}
-body.body--light {
-{% endif %}
-{% if flavor.identifier == 'frappe' or flavor.identifier == 'macchiato' or flavor.identifier == 'mocha' %}
-body.body--dark {
-{% endif %}
-  --accent: #{{flavor.colors[accent].hex}};
-  --text: #{{text.hex}};
-  --subtext1: #{{subtext1.hex}};
-  --overlay1: #{{overlay1.hex}};
-  --overlay0: #{{overlay0.hex}};
-  --surface0: #{{surface0.hex}};
-  --base: #{{base.hex}};
-  --mantle: #{{mantle.hex}};
-  --crust: #{{crust.hex}};
+body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
+  --accent: #{{ flavor.colors[accent].hex }};
+  --text: #{{ text.hex }};
+  --subtext1: #{{ subtext1.hex }};
+  --overlay1: #{{ overlay1.hex }};
+  --overlay0: #{{ overlay0.hex }};
+  --surface0: #{{ surface0.hex }};
+  --base: #{{ base.hex }};
+  --mantle: #{{ mantle.hex }};
+  --crust: #{{ crust.hex }};
 
-  --selection-bg: {{overlay2 | mod(opacity=0.3) | css_rgba}};
-  --red: #{{red.hex}};
+  --selection-bg: {{ overlay2 | mod(opacity=0.3) | css_rgba }};
+  --red: #{{ red.hex }};
 
   background: var(--crust);
   color: var(--text);
