@@ -1,23 +1,22 @@
 _default:
-    just --list
+  just --list
 
-release_dir := "themes"
-whiskers_cmd := "whiskers"
-themekit_cmd := "npm --prefix ./cider-themekit run build"
-template_path := "templates"
+dist := "themes"
 
 clean:
-    rm -rfv {{release_dir}}
+  rm -rfv {{dist}}
 
-build: build-dev
-    for processing_dir in `ls -d themes/*/*`; do \
-        {{themekit_cmd}} ../$processing_dir; \
-        find $processing_dir -maxdepth 1 -type f -delete; \
-        mv $processing_dir/dist/theme.cider-theme $(dirname $processing_dir)/$(basename $(dirname $processing_dir))-$(basename $processing_dir).cider-theme; \
-        rm -rf $processing_dir; \
-    done
+alias dev := whiskers
 
-build-dev:
-    for template_file in `ls {{template_path}}`; do \
-        {{whiskers_cmd}} {{template_path}}/$template_file; \
-    done
+whiskers: clean
+  whiskers templates/cider.tera
+  whiskers templates/theme.tera
+
+build: whiskers
+  #!/usr/bin/env bash
+  for theme in `ls -d {{dist}}/*/*`; do
+    npm --prefix ./cider-themekit run build ../$theme;
+    find $theme -maxdepth 1 -type f -delete;
+    mv $theme/dist/theme.cider-theme $(dirname $theme)/$(basename $(dirname $theme))-$(basename $theme).cider-theme;
+    rm -rf $theme;
+  done
