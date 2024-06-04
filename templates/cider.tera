@@ -358,6 +358,43 @@ body.body--dark {
       .q-btn {
         color: var(--base);
       }
+
+      [sfc-name='PlaylistSuggestions'] {
+        background: var(--mantle);
+
+        .q-btn {
+          color: var(--accent);
+        }
+
+        [sfc-name='QPagination'] {
+          .q-btn {
+            color: var(--text);
+          }
+
+          .q-btn--standard{
+            color: var(--accent);
+          }
+
+          .bg-primary {
+            background: var(--selection-bg);
+          }
+        }
+
+        [sfc-name='QList'] {
+          .q-item__label {
+            color: var(--text);
+          }
+
+          .q-item__label--caption {
+            color: var(--subtext1);
+          }
+
+          .q-item-type {
+            border-top-color: var(--overlay1)
+          }
+        }
+      }
+
     }
 
     .replaced-btn:before {
