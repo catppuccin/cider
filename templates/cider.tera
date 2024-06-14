@@ -284,17 +284,18 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background: var(--base);
 
       [sfc-name='QTabs'] {
-        color: var(--text);
-        background: var(--crust);
+        background: var(--mantle);
 
-        .q-tab__indicator {
-          background: var(--selection-bg);
+        .q-tab {
+          color: var(--text);
         }
 
         .q-tab--active {
-          .q-tab__label {
-            color: var(--accent);
-          }
+          color: var(--accent);
+        }
+
+        .q-tab__indicator {
+          background: var(--selection-bg);
         }
       }
       // Internal Middle Pane
@@ -566,19 +567,52 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         }
       }
 
-      [sfc-name='QList'] {
-        .bg-primary {
-          background: var(--selection-bg);
+      .tm-content {
+        color: var(--text);
+
+        [sfc-name='QList'] {
+          .bg-primary, .q-focus-helper {
+            background: var(--selection-bg);
+          }
+
+          [sfc-name='QItemSection'] {
+            .q-item__label {
+              color: var(--text);
+            }
+
+            .text-caption {
+              color: var(--subtext1)
+            }
+          }
         }
 
-        [sfc-name='QItemSection'] {
-          .q-item__label {
-            color: var(--text);
-          }
+        .q-dark, .text-h6 {
+          color: var(--text);
+        }
 
-          .text-caption {
-            color: var(--subtext1)
-          }
+        .q-icon[role='presentation'] {
+          color: var(--accent);
+        }
+
+        textarea {
+          background: var(--mantle);
+          color: var(--text);
+        }
+      }
+
+      [sfc-name='QTabs'] {
+        background: var(--mantle);
+
+        .q-tab {
+          color: var(--text);
+        }
+
+        .q-tab--active {
+          color: var(--accent);
+        }
+
+        .q-tab__indicator {
+          background: var(--selection-bg);
         }
       }
     }
