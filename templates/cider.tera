@@ -25,7 +25,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   --textDefault: var(--text);
   --systemPrimary: var(--text);
   --systemSecondary: var(--subtext1);
+  --systemTertiary: var(--surface0);
   --systemQuinary: var(--surface0);
+  --systemQuaternary: var(--selection-bg);
   --keyColor: var(--accent);
   --musicKeyColor: var(--accent);
   --tracklistAltRowColor: var(--mantle);
@@ -109,6 +111,32 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   // Immersive Browser Toolbar
   .im-toolbar {
     background: var(--base);
+  }
+
+  .window-controls {
+    .window-control.minimize:hover, .window-control.minmax:hover {
+      background-color: var(--selection-bg);
+    }
+
+    .window-control.minimize:hover:before, .window-control.minmax:hover:before {
+      background-color: var(--accent);
+    }
+
+    .window-control.close:hover {
+      background-color: var(--red);
+    }
+
+    .window-control.close.codicon:hover:before {
+      background-color: var(--crust);
+    }
+
+    .window-control.close:before, .window-control.minmax:before, .window-control.minimize:before {
+      background: var(--text);
+    }
+  }
+
+  .q-focus-helper { // Global-ish Hover Selector
+    background-color: var(--selection-bg);
   }
 
   .q-menu {
