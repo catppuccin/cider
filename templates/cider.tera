@@ -361,8 +361,12 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='ListItem'] {
-      .artist-text, .albumLink, .time {
+      .albumLink, .time {
         color: var(--subtext1);
+      }
+
+      .artist-text {
+        color: var(--accent);
       }
     }
 
@@ -383,6 +387,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='Playlist'] {
+      .meta-description {
+        color: var(--subtext1);
+      }
+
+      .popularity-star {
+        color: var(--accent);
+      }
+
       .q-btn {
         color: var(--base);
       }
