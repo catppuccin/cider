@@ -205,6 +205,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
+  [sfc-name='QueueButton'].active {
+    color: var(--accent);
+  }
+
+  [title='Lyrics'].active {
+    color: var(--accent);
+  }
+
   [sfc-name='QDialog'] {
     // Settings Window
     .settings-window {
