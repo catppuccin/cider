@@ -24,7 +24,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   color: var(--text);
   --textDefault: var(--text);
   --systemPrimary: var(--text);
-  --systemSecondary: var(--subtext1);
+  --systemSecondary: var(--accent);
   --systemTertiary: var(--surface0);
   --systemQuinary: var(--surface0);
   --systemQuaternary: var(--selection-bg);
