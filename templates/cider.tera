@@ -434,7 +434,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           }
         }
       }
+    }
 
+    .replaced-btn {
+      color: var(--accent);
     }
 
     .replaced-btn:before {
