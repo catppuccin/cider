@@ -427,7 +427,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     color: var(--overlay1);
 
     .nav-icon {
-      color: var(--text);
+      color: var(--accent);
     }
 
     .sidebar_nav-btn:active{
@@ -441,9 +441,13 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     .active {
       background: var(--selection-bg);
-      color: var(--accent);
+      color: var(--text);
 
       .nav-icon {
+        color: var(--accent);
+      }
+
+      .nav-text {
         color: var(--accent);
       }
     }
