@@ -859,7 +859,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   [sfc-name='MiniPlayerLayout'] {
     [sfc-name='MiniPlayerControls'] {
       .overlay-progress-bar {
-        --progressColor: var(--text);
+        --progressColor: var(--accent);
       }
     }
   }
