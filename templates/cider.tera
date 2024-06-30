@@ -649,6 +649,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .tm-card {
       background: var(--base);
 
+      .q-dark {
+        color: var(--text);
+      }
+
       [sfc-name='QBtn'] {
         background: var(--accent);
 
@@ -676,7 +680,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           }
         }
 
-        .q-dark, .text-h6 {
+        .text-h6 {
           color: var(--text);
         }
 
