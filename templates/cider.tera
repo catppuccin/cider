@@ -474,8 +474,20 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    [sfc-name='Artist'] .q-dark {
-      color: var(--accent);
+    [sfc-name='Artist'] {
+      .artist-text {
+        color: var(--text);
+      }
+
+      [sfc-name='MediaItem'] {
+        .artist-name, .ellipsis {
+          color: var(--accent);
+        }
+
+        .item-releaseDate {
+          color: var(--subtext1);
+        }
+      }
     }
 
     .replaced-btn {
