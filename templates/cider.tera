@@ -384,7 +384,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     background: var(--base);
 
     .detail-content {
-      .blurb-text .meta-data {
+      .blurb-text, .meta-data {
         color: var(--subtext1);
       }
 
