@@ -430,10 +430,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           }
 
           .q-item-type {
-            border-top-color: var(--overlay1)
+            border-top-color: var(--overlay1);
           }
         }
       }
+    }
+
+    [sfc-name='Artist'] .q-dark {
+      color: var(--accent);
     }
 
     .replaced-btn {
