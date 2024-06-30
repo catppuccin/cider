@@ -230,6 +230,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   }
 
   [sfc-name='QDialog'] {
+    .titlebar-button.close {
+      color: var(--text);
+    }
+
     // Settings Window
     .settings-window {
       [sfc-name='QToolbar'] {
