@@ -146,9 +146,24 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background: var(--selection-bg);
     }
 
-    [sfc-name='ContextMenuIcon'], [sfc-name='QItem']:hover [sfc-name='QIcon'], [sfc-name='CascadeItem']:hover [sfc-name='QIcon'] {
+    [sfc-name='QItem']:hover [sfc-name='QIcon'],
+    [sfc-name='CascadeItem']:hover [sfc-name='QIcon'] {
       color: var(--accent);
     }
+
+    [sfc-name='ContextMenuIconButton'] {
+      color: var(--accent);
+
+      .text-default {
+        color: var(--accent);
+      }
+
+      ._svg-icon {
+        background-color: var(--accent);
+      }
+    }
+
+
 
     [sfc-name='QItemSection'] {
       color: var(--text);
