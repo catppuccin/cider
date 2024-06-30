@@ -147,14 +147,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='ContextMenuIcon'] {
-      color: var(--text);
+      color: var(--accent);
     }
 
     [sfc-name='QItemSection'] {
       color: var(--text);
 
       [sfc-name='QIcon'] {
-        color: var(--text);
+        color: var(--accent);
       }
     }
     // For pop-up volume sliders
