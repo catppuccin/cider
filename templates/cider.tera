@@ -24,7 +24,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   color: var(--text);
   --textDefault: var(--text);
   --systemPrimary: var(--text);
-  --systemSecondary: var(--subtext1);
+  --systemSecondary: var(--accent);
   --systemTertiary: var(--surface0);
   --systemQuinary: var(--surface0);
   --systemQuaternary: var(--selection-bg);
@@ -49,14 +49,15 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='MojavePlayer'] {
-      .overlay-progress-bar {
-        --progressColor: var(--text);
-        background: var(--text);
+      [sfc-name='AMProgressBar'] .overlay-progress-bar {
+        background: var(--accent);
       }
 
       .player {
         background: var(--mantle);
       }
+
+      --contextMenuTextColor: var(--text);
     }
   }
 
@@ -68,14 +69,15 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     [sfc-name='MojavePlayer'] {
       background: var(--base);
 
-      .overlay-progress-bar {
-        --progressColor: var(--text);
-        background: var(--text);
+      [sfc-name='AMProgressBar'] .overlay-progress-bar {
+        background: var(--accent);
       }
 
       .player {
         background: var(--mantle);
       }
+
+      --contextMenuTextColor: var(--text);
     }
   }
 
@@ -90,7 +92,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    --contextMenuTextColor: var(--text);
+    --contextMenuTextColor: var(--accent);
   }
 
   #app-viewport[data-layout-type="maverick-if"] {
@@ -106,7 +108,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    --contextMenuTextColor: var(--text);
+    --contextMenuTextColor: var(--accent);
   }
   // Immersive Browser Toolbar
   .im-toolbar {
@@ -146,15 +148,29 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background: var(--selection-bg);
     }
 
-    [sfc-name='ContextMenuIcon'] {
-      color: var(--text);
+    [sfc-name='ContextMenuIcon'],
+    [sfc-name='QItem']:hover [sfc-name='QIcon'],
+    [sfc-name='CascadeItem']:hover [sfc-name='QIcon'] {
+      color: var(--accent);
+    }
+
+    [sfc-name='ContextMenuIconButton'] {
+      color: var(--accent);
+
+      .text-default {
+        color: var(--accent);
+      }
+
+      ._svg-icon {
+        background-color: var(--accent);
+      }
     }
 
     [sfc-name='QItemSection'] {
       color: var(--text);
 
       [sfc-name='QIcon'] {
-        color: var(--text);
+        color: var(--accent);
       }
     }
     // For pop-up volume sliders
@@ -205,7 +221,19 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
+  [sfc-name='QueueButton'].active {
+    color: var(--accent);
+  }
+
+  [title='Lyrics'].active {
+    color: var(--accent);
+  }
+
   [sfc-name='QDialog'] {
+    .titlebar-button.close {
+      color: var(--text);
+    }
+
     // Settings Window
     .settings-window {
       [sfc-name='QToolbar'] {
@@ -253,8 +281,13 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
               background: var(--crust);
               border-color: var(--selection-bg);
             }
+
             .q-field__native {
               color: var(--text);
+            }
+
+            .q-field__bottom {
+              color: var(--subtext1);
             }
           }
 
@@ -273,7 +306,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         }
       }
 
-      --q-dark: var(--base);
+      .q-dark {
+        color: var(--text);
+      }
 
       [sfc-name='QCard'] {
         color: var(--text);
@@ -348,13 +383,28 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   [sfc-name='QLayout'] {
     background: var(--base);
 
-    .chip-name {
-      opacity: 1;
+    .detail-content {
+      .blurb-text, .meta-data {
+        color: var(--subtext1);
+      }
+
+      .chip-name {
+        opacity: 1;
+        color: var(--accent);
+      }
+
+      .chip-favorite [sfc-name='QIcon'] {
+        color: var(--accent);
+      }
     }
 
     [sfc-name='ListItem'] {
-      .artist-text, .albumLink, .time {
+      .albumLink, .time {
         color: var(--subtext1);
+      }
+
+      .artist-text {
+        color: var(--accent);
       }
     }
 
@@ -375,6 +425,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='Playlist'] {
+      .meta-description {
+        color: var(--subtext1);
+      }
+
+      .popularity-star {
+        color: var(--accent);
+      }
+
       .q-btn {
         color: var(--base);
       }
@@ -410,11 +468,30 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           }
 
           .q-item-type {
-            border-top-color: var(--overlay1)
+            border-top-color: var(--overlay1);
           }
         }
       }
+    }
 
+    [sfc-name='Artist'] {
+      .artist-text {
+        color: var(--text);
+      }
+
+      [sfc-name='MediaItem'] {
+        .artist-name, .ellipsis {
+          color: var(--accent);
+        }
+
+        .item-releaseDate {
+          color: var(--subtext1);
+        }
+      }
+    }
+
+    .replaced-btn {
+      color: var(--accent);
     }
 
     .replaced-btn:before {
@@ -427,7 +504,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     color: var(--overlay1);
 
     .nav-icon {
-      color: var(--text);
+      color: var(--accent);
     }
 
     .sidebar_nav-btn:active{
@@ -441,9 +518,13 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     .active {
       background: var(--selection-bg);
-      color: var(--accent);
+      color: var(--text);
 
       .nav-icon {
+        color: var(--accent);
+      }
+
+      .nav-text {
         color: var(--accent);
       }
     }
@@ -568,6 +649,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .tm-card {
       background: var(--base);
 
+      .q-dark {
+        color: var(--text);
+      }
+
       [sfc-name='QBtn'] {
         background: var(--accent);
 
@@ -595,7 +680,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           }
         }
 
-        .q-dark, .text-h6 {
+        .text-h6 {
           color: var(--text);
         }
 
@@ -697,7 +782,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    .player-progress {
+    [sfc-name='AMProgressWidget'] {
       .am-currenttime {
         color: var(--text);
       }
@@ -707,7 +792,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
 
       .overlay-progress-bar {
-        --progressColor: var(--text);
+        --progressColor: var(--accent);
       }
 
       .am-duration {
@@ -743,7 +828,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
 
       .overlay-progress-bar {
-        --progressColor: var(--text);
+        --progressColor: var(--accent);
       }
     }
     // Sing
@@ -774,7 +859,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   [sfc-name='MiniPlayerLayout'] {
     [sfc-name='MiniPlayerControls'] {
       .overlay-progress-bar {
-        --progressColor: var(--text);
+        --progressColor: var(--accent);
       }
     }
   }
