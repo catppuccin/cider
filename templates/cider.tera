@@ -49,14 +49,15 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='MojavePlayer'] {
-      .overlay-progress-bar {
-        --progressColor: var(--text);
-        background: var(--text);
+      [sfc-name='AMProgressBar'] .overlay-progress-bar {
+        background: var(--accent);
       }
 
       .player {
         background: var(--mantle);
       }
+
+      --contextMenuTextColor: var(--text);
     }
   }
 
@@ -68,14 +69,15 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     [sfc-name='MojavePlayer'] {
       background: var(--base);
 
-      .overlay-progress-bar {
-        --progressColor: var(--text);
-        background: var(--text);
+      [sfc-name='AMProgressBar'] .overlay-progress-bar {
+        background: var(--accent);
       }
 
       .player {
         background: var(--mantle);
       }
+
+      --contextMenuTextColor: var(--text);
     }
   }
 
@@ -90,7 +92,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    --contextMenuTextColor: var(--text);
+    --contextMenuTextColor: var(--accent);
   }
 
   #app-viewport[data-layout-type="maverick-if"] {
@@ -106,7 +108,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    --contextMenuTextColor: var(--text);
+    --contextMenuTextColor: var(--accent);
   }
   // Immersive Browser Toolbar
   .im-toolbar {
@@ -163,8 +165,6 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         background-color: var(--accent);
       }
     }
-
-
 
     [sfc-name='QItemSection'] {
       color: var(--text);
@@ -782,7 +782,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    .player-progress {
+    [sfc-name='AMProgressWidget'] {
       .am-currenttime {
         color: var(--text);
       }
@@ -792,7 +792,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
 
       .overlay-progress-bar {
-        --progressColor: var(--text);
+        --progressColor: var(--accent);
       }
 
       .am-duration {
@@ -828,7 +828,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
 
       .overlay-progress-bar {
-        --progressColor: var(--text);
+        --progressColor: var(--accent);
       }
     }
     // Sing
