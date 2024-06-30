@@ -356,8 +356,19 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   [sfc-name='QLayout'] {
     background: var(--base);
 
-    .chip-name {
-      opacity: 1;
+    .detail-content {
+      .blurb-text {
+        color: var(--subtext1);
+      }
+
+      .chip-name {
+        opacity: 1;
+        color: var(--accent);
+      }
+
+      .meta-data {
+        color: var(--subtext1);
+      }
     }
 
     [sfc-name='ListItem'] {
