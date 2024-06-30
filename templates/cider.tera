@@ -384,7 +384,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     background: var(--base);
 
     .detail-content {
-      .blurb-text {
+      .blurb-text .meta-data {
         color: var(--subtext1);
       }
 
@@ -393,8 +393,8 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         color: var(--accent);
       }
 
-      .meta-data {
-        color: var(--subtext1);
+      .chip-favorite [sfc-name='QIcon'] {
+        color: var(--accent);
       }
     }
 
