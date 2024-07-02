@@ -26,6 +26,10 @@ whiskers:
     {
       "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Tabs",
       "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-tabs.scss"
+    },
+    {
+      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Contents",
+      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-contents.scss"
     }
   ]
 }

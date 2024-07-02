@@ -14,7 +14,7 @@ whiskers: clean
   whiskers templates/dialogs.tera
   whiskers templates/modes.tera
   whiskers templates/tabs.tera
-  whiskers templates/content.tera
+  whiskers templates/contents.tera
 
 build: whiskers
   #!/usr/bin/env bash

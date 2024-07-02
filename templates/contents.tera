@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
     - accent
-  filename: "themes/{{ flavor.identifier }}/{{ accent }}/catppuccin-{{ flavor.identifier }}-{{ accent }}-content.scss"
+  filename: "themes/{{ flavor.identifier }}/{{ accent }}/catppuccin-{{ flavor.identifier }}-{{ accent }}-contents.scss"
 ---
 body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   // Center Content Pane
