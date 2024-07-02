@@ -213,6 +213,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .dropdown-menu {
       background-color: var(--base);
     }
+
+    [sfc-name='HeaderSearchItem'] [sfc-name='QItemSection'].ellipsis {
+      color: var(--text);
+    }
   }
 
   [sfc-name='QueueButton'] {
