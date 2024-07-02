@@ -12,8 +12,20 @@ whiskers:
   "name": "Catppuccin",
   "styles": [
     {
-      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}}",
-      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}.scss"
+      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Globals",
+      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-globals.scss"
+    },
+    {
+      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Dialogs",
+      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-dialogs.scss"
+    },
+    {
+      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Modes",
+      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-modes.scss"
+    },
+    {
+      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Tabs",
+      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-tabs.scss"
     }
   ]
 }
