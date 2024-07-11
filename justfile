@@ -9,8 +9,12 @@ clean:
 alias dev := whiskers
 
 whiskers: clean
-  whiskers templates/cider.tera
+  whiskers templates/globals.tera
   whiskers templates/theme.tera
+  whiskers templates/dialogs.tera
+  whiskers templates/modes.tera
+  whiskers templates/tabs.tera
+  whiskers templates/contents.tera
 
 build: whiskers
   #!/usr/bin/env bash
