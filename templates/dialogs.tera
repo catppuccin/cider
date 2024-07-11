@@ -199,7 +199,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  //Theme Manager Window, CAL, & Command Center
+  // Theme Manager Window, CAL, & Command Center
   [sfc-name='QGlobalDialog'] {
     .q-dialog-plugin { // Close Dialog
       background: var(--base);
@@ -308,5 +308,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .am-audio-settings {
       background: var(--base);
     }
+  }
+
+  // Notification Toasts - currently found in song.link requests
+  .q-notifications .q-notification--standard {
+    color: var(--base);
   }
 }
