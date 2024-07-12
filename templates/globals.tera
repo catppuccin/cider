@@ -19,6 +19,8 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
   --selection-bg: {{ overlay2 | mod(opacity=0.3) | css_rgba }};
   --red: #{{ red.hex }};
+  --green: #{{ green.hex }};
+  --blue: #{{ blue.hex }};
 
   background: var(--crust);
   color: var(--text);
@@ -34,6 +36,11 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   --tracklistHoverColor: var(--selection-bg);
   --vibrantDivider: var(--surface0);
   --q-primary: var(--accent);
+  --q-info: var(--blue);
+
+  .bg-green {
+    background-color: var(--green);
+  }
 
   .text-default {
     color: var(--text);
