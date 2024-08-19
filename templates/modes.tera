@@ -7,7 +7,7 @@ whiskers:
   filename: "themes/{{ flavor.identifier }}/{{ accent }}/catppuccin-{{ flavor.identifier }}-{{ accent }}-modes.scss"
 ---
 body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
-  // Miniplayer
+  {# Miniplayer #}
   [sfc-name='MiniPlayerLayout'] {
     [sfc-name='MiniPlayerControls'] {
       .overlay-progress-bar {
@@ -16,7 +16,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  // Coverflow Mode
+  {# Coverflow Mode #}
   .coverflow-player {
     [sfc-name='MojavePlayer'] {
       .overlay-progress-track {
@@ -27,7 +27,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         --progressColor: var(--accent);
       }
     }
-    // Sing
+    {# Sing #}
     .lyricView {
       .lyric-word {
         --defaultColor: var(--text);
@@ -52,9 +52,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  // Immersive Mode
+  {# Immersive Mode #}
 
-  // Immersive Browser Toolbar
+  {# Immersive Browser Toolbar #}
   .im-toolbar {
     background: var(--base);
   }
@@ -95,13 +95,13 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         color: var(--subtext1);
       }
     }
-    // Autoplay Icon
+    {# Autoplay Icon #}
     .queue-item-list {
       .q-icon {
         color: var(--text);
       }
     }
-    // Lyrics View
+    {# Lyrics View #}
     .lyricView {
       .lyric-word {
         --defaultColor: var(--text);

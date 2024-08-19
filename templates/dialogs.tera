@@ -7,7 +7,7 @@ whiskers:
   filename: "themes/{{ flavor.identifier }}/{{ accent }}/catppuccin-{{ flavor.identifier }}-{{ accent }}-dialogs.scss"
 ---
 body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
-  // Menu & Pop-ups
+  {# Menu & Pop-ups #}
   .q-menu {
     background: var(--base);
 
@@ -40,7 +40,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         color: var(--accent);
       }
     }
-    // For pop-up volume sliders
+    {# For pop-up volume sliders #}
     [sfc-name='AMVolumeSlider'] {
       .overlay-progress-bar {
         background: var(--text);
@@ -53,7 +53,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       color: var(--text);
     }
 
-    // Settings Window
+    {# Settings Window #}
     .settings-window {
       [sfc-name='QToolbar'] {
         background: var(--crust);
@@ -88,13 +88,13 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           }
         }
 
-        // Dropdowns
+        {# Dropdowns #}
         [sfc-name='QSlideTransition'] {
           background: var(--mantle);
         }
 
         [sfc-name='QItem'] {
-          // Input Box
+          {# Input Box #}
           [sfc-name='QInput'] {
             .q-field__control {
               background: var(--crust);
@@ -133,7 +133,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         color: var(--text);
       }
     }
-    // Updates Window
+    {# Updates Window #}
     .updates-window {
       background: var(--base);
 
@@ -152,7 +152,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           background: var(--selection-bg);
         }
       }
-      // Internal Middle Pane
+      {# Internal Middle Pane #}
       .versions-list {
         background-color: var(--crust);
 
@@ -163,7 +163,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         [sfc-name='QIcon'], [sfc-name='QItemLabel'] {
           color: var(--text);
         }
-        // Buttons
+        {# Buttons #}
         [sfc-name='QBtn'] {
           background: var(--accent);
 
@@ -181,7 +181,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         }
       }
     }
-    // What's New Window
+    {# What's New Window #}
     .tm-card {
       background: var(--base);
 
@@ -199,9 +199,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  // Theme Manager Window, CAL, & Command Center
+  {# Theme Manager Window, CAL, & Command Center #}
   [sfc-name='QGlobalDialog'] {
-    .q-dialog-plugin { // Close Dialog
+    .q-dialog-plugin { {# Close Dialog #}
       background: var(--base);
       color: var(--text);
 
@@ -226,7 +226,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       [sfc-name='QItemSection'] {
         color: var(--text);
       }
-      // Search
+      {# Search #}
       [sfc-name='QInput'] {
         background: var(--mantle);
 
@@ -310,7 +310,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  // Notification Toasts - currently found in song.link requests
+  {# Notification Toasts - currently found in song.link requests #}
   .q-notifications .q-notification--standard {
     color: var(--base);
   }

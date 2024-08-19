@@ -7,7 +7,7 @@ whiskers:
   filename: "themes/{{ flavor.identifier }}/{{ accent }}/catppuccin-{{ flavor.identifier }}-{{ accent }}-contents.scss"
 ---
 body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
-  // Center Content Pane
+  {# Center Content Pane #}
   [sfc-name='QLayout'] {
     background: var(--base);
 
@@ -127,7 +127,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  // Left Drawer Content
+  {# Left Drawer Content #}
   [sfc-name='Sidebar'] {
     background: var(--crust);
     color: var(--overlay1);
@@ -163,7 +163,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  // Right Drawer / Queue / Lyrics
+  {# Right Drawer / Queue / Lyrics #}
   [sfc-name='RightDrawerContent'] {
     .lyric-view {
       .lyric-word {
@@ -206,7 +206,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       .qmd-artist_album {
         color: var(--subtext1);
       }
-      // Icons
+      {# Icons #}
       .fa-solid {
         color: var(--accent);
       }

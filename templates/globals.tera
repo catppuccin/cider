@@ -140,11 +140,11 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  .q-focus-helper { // Global-ish Hover Selector
+  .q-focus-helper { {# Global-ish Hover Selector #}
     background-color: var(--selection-bg);
   }
 
-  // Select Box
+  {# Select Box #}
   [sfc-name='CSelect'] {
     .c-select, [data-v-c081d946] {
       background-color: var(--crust);
@@ -157,7 +157,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  // Switch
+  {# Switch #}
   input[type=checkbox][switch] {
     background: var(--overlay0);
   }
