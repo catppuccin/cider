@@ -4,32 +4,23 @@ whiskers:
   matrix:
     - flavor
     - accent
-  filename: "themes/{{flavor.identifier}}/{{accent}}/theme.json"
+  filename: "themes/{{flavor.identifier}}/{{accent}}/theme.yml"
 ---
-{
-  "author": "Catppuccin",
-  "identifier": "com.catppuccin.{{flavor.identifier}}-{{accent}}",
-  "name": "Catppuccin",
-  "styles": [
-    {
-      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Globals",
-      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-globals.scss"
-    },
-    {
-      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Dialogs",
-      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-dialogs.scss"
-    },
-    {
-      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Modes",
-      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-modes.scss"
-    },
-    {
-      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Tabs",
-      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-tabs.scss"
-    },
-    {
-      "name": "Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Contents",
-      "entry": "catppuccin-{{flavor.identifier}}-{{accent}}-contents.scss"
-    }
-  ]
-}
+name: Catppuccin {{flavor.identifier}} {{accent}}
+author: Catppuccin
+stylesheets:
+  - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Globals
+    file: catppuccin-{{flavor.identifier}}-{{accent}}-globals.scss
+
+  - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}}  Dialogs
+    file: catppuccin-{{flavor.identifier}}-{{accent}}-dialogs.scss
+
+  - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Modes
+    file: catppuccin-{{flavor.identifier}}-{{accent}}-modes.scss
+
+  - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Tabs
+    file: catppuccin-{{flavor.identifier}}-{{accent}}-tabs.scss
+
+  - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Contents
+    file: catppuccin-{{flavor.identifier}}-{{accent}}-contents.scss
+
