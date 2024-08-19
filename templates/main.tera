@@ -110,7 +110,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background: var(--base);
     }
 
-    [sfc-name='LCDPlayerTop'] {
+    .lcdplayer-top {
       background: var(--base);
 
       .player {
