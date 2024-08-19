@@ -47,4 +47,12 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background: var(--mantle);
     }
   }
+
+  {# Themes Page and Plugins Page #}
+  [sfc-name='ThemesPage'], [sfc-name='PluginsPage'] {
+    [sfc-name='GalleryItem'] [sfc-name='QCardSection'] {
+      background-color: var(--mantle);
+      color: var(--text);
+    }
+  }
 }

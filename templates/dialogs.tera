@@ -199,7 +199,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  {# CAL, & Command Center #}
+  {# CAL & Command Center #}
   [sfc-name='QGlobalDialog'] {
     .q-dialog-plugin { {# Close Dialog #}
       background: var(--base);
@@ -261,6 +261,20 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     [sfc-name='NIcon'] {
       color: var(--accent);
+    }
+  }
+
+  {# Themes / Plugins Card #}
+  [data-v-b2f7eb52][sfc-name='QCard'] {
+    background-color: var(--base);
+    color: var(--text);
+
+    [sfc-name='QItemLabel'], .title-text, [sfc-name='QItemSection'], button.close [sfc-name='QIcon'] {
+      color: var(--text);
+    }
+
+    button .qb-item-content {
+      color: var(--crust);
     }
   }
 }
