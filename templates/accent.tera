@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
     - accent
-  filename: "themes/{{ flavor.identifier }}/catppuccin-accent-{{ accent }}.scss"
+  filename: "themes/ctp-{{ flavor.identifier }}/catppuccin-accent-{{ accent }}.scss"
 ---
 body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   --accent: #{{ flavor.colors[accent].hex }}

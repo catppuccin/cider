@@ -3,7 +3,7 @@ whiskers:
   version: 2.4.0
   matrix:
     - flavor
-  filename: "themes/{{ flavor.identifier }}/theme.yml"
+  filename: "themes/ctp-{{ flavor.identifier }}/theme.yml"
 ---
 name: Catppuccin {{ flavor.name }}
 author: Catppuccin
