@@ -23,4 +23,3 @@ stylesheets:
 
   - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Contents
     file: catppuccin-{{flavor.identifier}}-{{accent}}-contents.scss
-
