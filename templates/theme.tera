@@ -6,13 +6,13 @@ whiskers:
     - accent
   filename: "themes/{{flavor.identifier}}/{{accent}}/theme.yml"
 ---
-name: Catppuccin {{flavor.identifier}} {{accent}}
+name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}}
 author: Catppuccin
 stylesheets:
   - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Globals
     file: catppuccin-{{flavor.identifier}}-{{accent}}-globals.scss
 
-  - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}}  Dialogs
+  - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Dialogs
     file: catppuccin-{{flavor.identifier}}-{{accent}}-dialogs.scss
 
   - name: Catppuccin {{flavor.name}} - {{flavor.colors[accent].name}} - Modes
