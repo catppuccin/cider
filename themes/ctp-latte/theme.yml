@@ -3,7 +3,7 @@ author: Catppuccin
 stylesheets:
   - name: Catppuccin Latte - Base
     file: catppuccin-latte.scss
-    description: Enable a flavor and accent below!
+    description: Enable your favorite accent below!
 
   - name: Rosewater
     file: catppuccin-accent-rosewater.scss
