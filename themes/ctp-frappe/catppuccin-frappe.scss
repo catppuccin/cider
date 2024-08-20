@@ -690,7 +690,7 @@ body.body--dark {
   }
 
   /* Themes / Plugins Card */
-  [data-v-b2f7eb52][sfc-name='QCard'] {
+  [data-v-ec8b2100][sfc-name='QCard'] {
     background-color: var(--base);
     color: var(--text);
 
@@ -922,7 +922,7 @@ body.body--dark {
 
   /* Themes Page and Plugins Page */
   [sfc-name='ThemesPage'], [sfc-name='PluginsPage'] {
-    [sfc-name='GalleryItem'] [sfc-name='QCardSection'] {
+    [sfc-name='GalleryItem'] [sfc-name='QCardSection'], [sfc-name='GalleryItem'] .gallery-card-content {
       background-color: var(--mantle);
       color: var(--text);
     }
