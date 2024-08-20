@@ -722,8 +722,8 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   }
 
   /* Coverflow Mode */
-  [sfc-name='ImmersiveCoveflowPlayer'] {
-    [sfc-name='MojavePlayer'] {
+  .coverflow-player {
+    [sfc-name='MojavePlayer'], .minimal-player {
       .overlay-progress-track {
         background: var(--surface0);
       }

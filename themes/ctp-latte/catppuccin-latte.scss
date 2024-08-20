@@ -715,8 +715,8 @@ body.body--light {
   }
 
   /* Coverflow Mode */
-  [sfc-name='ImmersiveCoveflowPlayer'] {
-    [sfc-name='MojavePlayer'] {
+  .coverflow-player {
+    [sfc-name='MojavePlayer'], .minimal-player {
       .overlay-progress-track {
         background: var(--surface0);
       }
