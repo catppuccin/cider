@@ -877,7 +877,7 @@ body.body--dark {
 
   /* Immersive Options Dialog */
   .sing-options-panel {
-    [sfc-name='QItemLabel'], [sfc-name='QItemSection'] {
+    [sfc-name='QItemLabel'], [sfc-name='QItemSection'], [sfc-name='ModalTitleBar'] {
       color: var(--text);
     }
 

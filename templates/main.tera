@@ -884,7 +884,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
   /* Immersive Options Dialog */
   .sing-options-panel {
-    [sfc-name='QItemLabel'], [sfc-name='QItemSection'] {
+    [sfc-name='QItemLabel'], [sfc-name='QItemSection'], [sfc-name='ModalTitleBar'] {
       color: var(--text);
     }
 
