@@ -721,31 +721,36 @@ body.body--light {
         background: var(--surface0);
       }
 
-      .overlay-progress-bar, [sfc-name='AMVolumeSlider'] .volume-range {
+      .overlay-progress-bar {
         --progressColor: var(--accent);
       }
+
+      [sfc-name='AMVolumeSlider'] .volume-range {
+        --progressColor: var(--text);
+      }
     }
-    /* Sing */
-    .lyricView {
-      .lyric-word {
-        --defaultColor: var(--text);
-        --gradientColor: var(--accent);
-      }
+  }
 
+  /* Sing */
+  [sfc-name='ImmersiveSingLyrics'] {
+    .lyric-word {
+      --defaultColor: var(--text);
+      --gradientColor: var(--accent);
+    }
+
+    .lyric-text {
+      color: var(--text);
+    }
+
+    .active {
       .lyric-text {
-        color: var(--text);
+        color: var(--accent);
       }
+    }
 
-      .active {
-        .lyric-text {
-          color: var(--accent);
-        }
-      }
-
-      .finished {
-        .lyric-word, .lyric-text {
-          color: var(--accent);
-        }
+    .finished {
+      .lyric-word, .lyric-text {
+        color: var(--accent);
       }
     }
   }
@@ -861,8 +866,12 @@ body.body--light {
       }
     }
 
-    [sfc-name='AMProgressBar'] .overlay-progress-bar, [sfc-name='AMVolumeSlider'] .volume-range {
+    [sfc-name='AMProgressBar'] .overlay-progress-bar {
       --progressColor: var(--accent);
+    }
+
+    [sfc-name='AMVolumeSlider'] .volume-range {
+      --progressColor: var(--text);
     }
   }
 
