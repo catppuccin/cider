@@ -36,13 +36,10 @@
 
 ## Usage
 
-1. Download your preferred flavor and accent from the [themes](themes/) directory.
-2. Open Cider
-3. Go to Settings → Experiments → Enable Theme Support.
-4. Go to Theme Manager → Install from File → (Your downloaded theme file).
-5. Go to Settings → Visual → Color Scheme:
-   - Use **Light** if using Latte.
-   - Use **Dark** if using Frappé, Macchiato, or Mocha.
+1. Open Cider
+2. Menu → Marketplace → Themes
+3. Find Catppuccin and your favorite flavor
+4. Click `Install`
 
 ## Notes
 
