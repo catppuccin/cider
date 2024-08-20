@@ -1,15 +1,8 @@
- ---
-whiskers:
-  version: 2.4.0
-  matrix:
-    - flavor
-  filename: "themes/ctp-{{ flavor.identifier }}/theme.yml"
----
-name: Catppuccin {{ flavor.name }}
+name: Catppuccin Mocha
 author: Catppuccin
 stylesheets:
-  - name: Catppuccin {{ flavor.name }} - Base
-    file: catppuccin-{{ flavor.identifier }}.scss
+  - name: Catppuccin Mocha - Base
+    file: catppuccin-mocha.scss
     description: Enable your favorite accent below!
 
   - name: Rosewater

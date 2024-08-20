@@ -1,0 +1,11 @@
+---
+whiskers:
+  version: 2.4.0
+  matrix:
+    - flavor
+    - accent
+  filename: "themes/ctp-{{ flavor.identifier }}/catppuccin-accent-{{ accent }}.scss"
+---
+body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
+  --accent: #{{ flavor.colors[accent].hex }}
+}
