@@ -365,6 +365,10 @@ body.body--light {
         --gradientColor: var(--accent);
       }
 
+      .lyric-word.is-finished {
+        --defaultColor: var(--accent);
+      }
+
       .lyric-text {
         color: var(--text);
       }
