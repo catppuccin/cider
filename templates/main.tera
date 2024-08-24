@@ -247,7 +247,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         color: var(--text);
       }
 
-      .albumLink, .time {
+      .albumLink, .time, .trackNumber {
         color: var(--subtext1);
       }
 
