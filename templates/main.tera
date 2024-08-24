@@ -756,6 +756,19 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
+  /* Multi Artist Picker */
+  .artist-picker-modal {
+    background-color: var(--base);
+
+    [sfc-name='QItemSection'], .modal-titlebar-content, .close {
+      color: var(--text);
+    }
+
+    .q-item-type+.q-item-type {
+      border-top-color: var(--surface0);
+    }
+  }
+
   /* Modes */
 
   /* Miniplayer */
