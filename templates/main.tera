@@ -45,7 +45,15 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     background-color: var(--green);
   }
 
+  .bg-red {
+    background-color: var(--red);
+  }
+
   .text-default {
+    color: var(--text);
+  }
+
+  .text-white {
     color: var(--text);
   }
 
