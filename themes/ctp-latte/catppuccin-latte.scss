@@ -38,7 +38,15 @@ body.body--light {
     background-color: var(--green);
   }
 
+  .bg-red {
+    background-color: var(--red);
+  }
+
   .text-default {
+    color: var(--text);
+  }
+
+  .text-white {
     color: var(--text);
   }
 
@@ -166,6 +174,17 @@ body.body--light {
     background: var(--crust);
   }
 
+  /* Input Box */
+  input[type='number'] {
+    color: var(--text);
+  }
+
+  /* Tooltips */
+  .q-tooltip {
+    background-color: var(--base);
+    color: var(--text);
+  }
+
   [sfc-name='HeaderSearch'] {
     .search-box {
       background: var(--mantle);
@@ -221,7 +240,7 @@ body.body--light {
         color: var(--text);
       }
 
-      .albumLink, .time {
+      .albumLink, .time, .trackNumber {
         color: var(--subtext1);
       }
 
@@ -355,6 +374,16 @@ body.body--light {
     .sidebar-label {
       opacity: 1;
     }
+
+    [sfc-name='QTabs'] {
+      background-color: var(--mantle);
+    }
+
+    [sfc-name='PageTabList'] {
+      .title-text {
+        color: var(--text);
+      }
+    }
   }
 
   /* Right Drawer / Queue / Lyrics */
@@ -462,6 +491,10 @@ body.body--light {
       }
     }
 
+    .q-btn.bg-primary, .q-btn.bg-primary [sfc-name='QIcon'] {
+      color: var(--crust);
+    }
+
     [sfc-name='QItemSection'] {
       color: var(--text);
 
@@ -560,6 +593,13 @@ body.body--light {
 
       [sfc-name='QCard'] {
         color: var(--text);
+      }
+
+      .themes-page {
+        [sfc-name='QList'] [sfc-name='QBtn'].q-btn--actionable {
+          background-color: transparent;
+          color: var(--text);
+        }
       }
     }
     /* Updates Window */
@@ -671,6 +711,25 @@ body.body--light {
 
     .am-audio-settings {
       background: var(--base);
+
+      [sfc-name='QItemLabel'], [sfc-name='QTab'][aria-selected='false'] {
+        color: var(--text);
+      }
+
+      [sfc-name='AMEQ'] {
+        .mini, .close {
+          color: var(--text);
+        }
+
+        .eq-freq, .eq-q {
+          background-color: var(--mantle);
+          color: var(--text);
+        }
+
+        [sfc-name='QBtn'] {
+          color: var(--crust);
+        }
+      }
     }
   }
 
@@ -704,6 +763,19 @@ body.body--light {
 
     button .qb-item-content {
       color: var(--crust);
+    }
+  }
+
+  /* Multi Artist Picker */
+  .artist-picker-modal {
+    background-color: var(--base);
+
+    [sfc-name='QItemSection'], .modal-titlebar-content, .close {
+      color: var(--text);
+    }
+
+    .q-item-type+.q-item-type {
+      border-top-color: var(--surface0);
     }
   }
 

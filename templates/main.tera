@@ -601,6 +601,13 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       [sfc-name='QCard'] {
         color: var(--text);
       }
+
+      .themes-page {
+        [sfc-name='QList'] [sfc-name='QBtn'].q-btn--actionable {
+          background-color: transparent;
+          color: var(--text);
+        }
+      }
     }
     /* Updates Window */
     .updates-window {
