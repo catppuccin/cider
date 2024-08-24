@@ -701,6 +701,25 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     .am-audio-settings {
       background: var(--base);
+
+      [sfc-name='QItemLabel'], [sfc-name='QTab'][aria-selected='false'] {
+        color: var(--text);
+      }
+
+      [sfc-name='AMEQ'] {
+        .mini, .close {
+          color: var(--text);
+        }
+
+        .eq-freq, .eq-q {
+          background-color: var(--mantle);
+          color: var(--text);
+        }
+
+        [sfc-name='QBtn'] {
+          color: var(--crust);
+        }
+      }
     }
   }
 
