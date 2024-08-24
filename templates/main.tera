@@ -181,6 +181,17 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     background: var(--crust);
   }
 
+  /* Input Box */
+  input[type='number'] {
+    color: var(--text);
+  }
+
+  /* Tooltips */
+  .q-tooltip {
+    background-color: var(--base);
+    color: var(--text);
+  }
+
   [sfc-name='HeaderSearch'] {
     .search-box {
       background: var(--mantle);
