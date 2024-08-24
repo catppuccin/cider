@@ -381,6 +381,16 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .sidebar-label {
       opacity: 1;
     }
+
+    [sfc-name='QTabs'] {
+      background-color: var(--mantle);
+    }
+
+    [sfc-name='PageTabList'] {
+      .title-text {
+        color: var(--text);
+      }
+    }
   }
 
   /* Right Drawer / Queue / Lyrics */
