@@ -11,45 +11,7 @@ stylesheets:
   - name: Catppuccin {{ flavor.name }} - Base
     file: catppuccin-{{ flavor.identifier }}.scss
     description: Enable your favorite accent below!
-
-  - name: Rosewater
-    file: catppuccin-accent-rosewater.scss
-
-  - name: Flamingo
-    file: catppuccin-accent-flamingo.scss
-
-  - name: Pink
-    file: catppuccin-accent-pink.scss
-
-  - name: Mauve
-    file: catppuccin-accent-mauve.scss
-
-  - name: Red
-    file: catppuccin-accent-red.scss
-
-  - name: Maroon
-    file: catppuccin-accent-maroon.scss
-
-  - name: Peach
-    file: catppuccin-accent-peach.scss
-
-  - name: Yellow
-    file: catppuccin-accent-yellow.scss
-
-  - name: Green
-    file: catppuccin-accent-green.scss
-
-  - name: Teal
-    file: catppuccin-accent-teal.scss
-
-  - name: Sky
-    file: catppuccin-accent-sky.scss
-
-  - name: Sapphire
-    file: catppuccin-accent-sapphire.scss
-
-  - name: Blue
-    file: catppuccin-accent-blue.scss
-
-  - name: Lavender
-    file: catppuccin-accent-lavender.scss
+  {% for identifier, color in flavor.colors %}{% if color.accent %}
+  - name: {{ color.name }}
+    file: catppuccin-accent-{{ identifier }}.scss
+  {% endif %}{% endfor %}
