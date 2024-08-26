@@ -369,11 +369,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background: var(--selection-bg);
       color: var(--text);
 
-      .nav-icon {
-        color: var(--accent);
-      }
-
-      .nav-text {
+      .nav-icon, .nav-text {
         color: var(--accent);
       }
     }
