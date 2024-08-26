@@ -38,7 +38,15 @@ body.body--dark {
     background-color: var(--green);
   }
 
+  .bg-red {
+    background-color: var(--red);
+  }
+
   .text-default {
+    color: var(--text);
+  }
+
+  .text-white {
     color: var(--text);
   }
 
@@ -166,6 +174,17 @@ body.body--dark {
     background: var(--crust);
   }
 
+  /* Input Box */
+  input[type='number'] {
+    color: var(--text);
+  }
+
+  /* Tooltips */
+  .q-tooltip {
+    background-color: var(--mantle);
+    color: var(--text);
+  }
+
   [sfc-name='HeaderSearch'] {
     .search-box {
       background: var(--mantle);
@@ -221,7 +240,7 @@ body.body--dark {
         color: var(--text);
       }
 
-      .albumLink, .time {
+      .albumLink, .time, .trackNumber {
         color: var(--subtext1);
       }
 
@@ -343,17 +362,23 @@ body.body--dark {
       background: var(--selection-bg);
       color: var(--text);
 
-      .nav-icon {
-        color: var(--accent);
-      }
-
-      .nav-text {
+      .nav-icon, .nav-text {
         color: var(--accent);
       }
     }
 
     .sidebar-label {
       opacity: 1;
+    }
+
+    [sfc-name='QTabs'] {
+      background-color: var(--mantle);
+    }
+
+    [sfc-name='PageTabList'] {
+      .title-text {
+        color: var(--text);
+      }
     }
   }
 
@@ -418,7 +443,7 @@ body.body--dark {
     }
 
     [sfc-name='QTabs'] {
-      background: var(--base);
+      background-color: var(--base);
 
       .q-tab {
         color: var(--text);
@@ -429,7 +454,7 @@ body.body--dark {
       }
 
       .q-tab__indicator {
-        background: var(--selection-bg);
+        background-color: var(--selection-bg);
       }
     }
   }
@@ -438,10 +463,10 @@ body.body--dark {
 
   /* Menu & Pop-ups */
   .q-menu {
-    background: var(--base);
+    background-color: var(--mantle);
 
     .q-hoverable:hover {
-      background: var(--selection-bg);
+      background-color: var(--selection-bg);
     }
 
     [sfc-name='ContextMenuIcon'],
@@ -462,6 +487,10 @@ body.body--dark {
       }
     }
 
+    .q-btn.bg-primary, .q-btn.bg-primary [sfc-name='QIcon'] {
+      color: var(--crust);
+    }
+
     [sfc-name='QItemSection'] {
       color: var(--text);
 
@@ -474,6 +503,37 @@ body.body--dark {
       .overlay-progress-bar {
         background: var(--text);
       }
+    }
+  }
+
+  /* General Popups using QCard */
+  [role='dialog'] [sfc-name='QCard'] {
+    background-color: var(--base);
+    color: var(--text);
+
+    .close, [sfc-name='QItem'], [sfc-name='QBtn']:not(.bg-red, .bg-primary).q-btn__content {
+      color: var(--text);
+    }
+
+    .q-field__control {
+      background: var(--crust);
+      border-color: var(--selection-bg);
+
+      .q-field__native {
+        color: var(--text);
+      }
+
+      .q-field__label {
+        color: var(--subtext1);
+      }
+    }
+
+    .q-field__counter {
+      color: var(--subtext1);
+    }
+
+    .q-btn.bg-primary, .q-btn.bg-primary [sfc-name='QIcon'] {
+      color: var(--crust);
     }
   }
 
@@ -560,6 +620,17 @@ body.body--dark {
 
       [sfc-name='QCard'] {
         color: var(--text);
+      }
+
+      .themes-page {
+        [sfc-name='QList'] [sfc-name='QBtn'].q-btn--actionable {
+          background-color: transparent;
+          color: var(--accent);
+        }
+
+        [sfc-name='QExpansionItem'] [sfc-name='QList'] {
+          background-color: var(--mantle);
+        }
       }
     }
     /* Updates Window */
@@ -671,6 +742,25 @@ body.body--dark {
 
     .am-audio-settings {
       background: var(--base);
+
+      [sfc-name='QItemLabel'], [sfc-name='QTab'][aria-selected='false'], .close {
+        color: var(--text);
+      }
+
+      [sfc-name='AMEQ'] {
+        .mini {
+          color: var(--text);
+        }
+
+        .eq-freq, .eq-q {
+          background-color: var(--mantle);
+          color: var(--text);
+        }
+
+        [sfc-name='QBtn'] {
+          color: var(--crust);
+        }
+      }
     }
   }
 
@@ -704,6 +794,19 @@ body.body--dark {
 
     button .qb-item-content {
       color: var(--crust);
+    }
+  }
+
+  /* Multi Artist Picker */
+  .artist-picker-modal {
+    background-color: var(--base);
+
+    [sfc-name='QItemSection'], .modal-titlebar-content, .close {
+      color: var(--text);
+    }
+
+    .q-item-type+.q-item-type {
+      border-top-color: var(--surface0);
     }
   }
 
@@ -764,6 +867,12 @@ body.body--dark {
   /* Immersive Browser Toolbar */
   .im-toolbar {
     background: var(--base);
+  }
+
+  .im-window-controls {
+    .close {
+      color: var(--text);
+    }
   }
 
   .immersive-player {
@@ -938,6 +1047,10 @@ body.body--dark {
     [sfc-name='GalleryItem'] [sfc-name='QCardSection'], [sfc-name='GalleryItem'] .gallery-card-content {
       background-color: var(--mantle);
       color: var(--text);
+    }
+
+    [sfc-name='QBadge'] {
+      color: var(--crust);
     }
   }
 }
