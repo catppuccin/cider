@@ -517,6 +517,37 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
+  /* General Popups using QCard */
+  [role='dialog'] [sfc-name='QCard'] {
+    background-color: var(--base);
+    color: var(--text);
+
+    .close {
+      color: var(--text);
+    }
+
+    .q-field__control {
+      background: var(--crust);
+      border-color: var(--selection-bg);
+
+      .q-field__native {
+        color: var(--text);
+      }
+
+      .q-field__label {
+        color: var(--subtext1);
+      }
+    }
+
+    .q-field__counter {
+      color: var(--subtext1);
+    }
+
+    .q-btn.bg-primary, .q-btn.bg-primary [sfc-name='QIcon'] {
+      color: var(--crust);
+    }
+  }
+
   [sfc-name='QDialog'] {
     .titlebar-button.close {
       color: var(--text);
@@ -723,7 +754,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .am-audio-settings {
       background: var(--base);
 
-      [sfc-name='QItemLabel'], [sfc-name='QTab'][aria-selected='false'] {
+      [sfc-name='QItemLabel'], [sfc-name='QTab'][aria-selected='false'], .close {
         color: var(--text);
       }
 
