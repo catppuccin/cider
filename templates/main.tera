@@ -188,7 +188,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
   /* Tooltips */
   .q-tooltip {
-    background-color: var(--base);
+    background-color: var(--mantle);
     color: var(--text);
   }
 
@@ -454,7 +454,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='QTabs'] {
-      background: var(--base);
+      background-color: var(--base);
 
       .q-tab {
         color: var(--text);
@@ -465,7 +465,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
 
       .q-tab__indicator {
-        background: var(--selection-bg);
+        background-color: var(--selection-bg);
       }
     }
   }
@@ -474,10 +474,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
   /* Menu & Pop-ups */
   .q-menu {
-    background: var(--base);
+    background-color: var(--mantle);
 
     .q-hoverable:hover {
-      background: var(--selection-bg);
+      background-color: var(--selection-bg);
     }
 
     [sfc-name='ContextMenuIcon'],
@@ -605,7 +605,11 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       .themes-page {
         [sfc-name='QList'] [sfc-name='QBtn'].q-btn--actionable {
           background-color: transparent;
-          color: var(--text);
+          color: var(--accent);
+        }
+
+        [sfc-name='QExpansionItem'] [sfc-name='QList'] {
+          background-color: var(--mantle);
         }
       }
     }
