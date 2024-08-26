@@ -515,7 +515,7 @@ body.body--dark {
     background-color: var(--base);
     color: var(--text);
 
-    .close {
+    .close, [sfc-name='QItem'], .q-btn__content {
       color: var(--text);
     }
 
