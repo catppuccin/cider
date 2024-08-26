@@ -181,7 +181,7 @@ body.body--light {
 
   /* Tooltips */
   .q-tooltip {
-    background-color: var(--base);
+    background-color: var(--mantle);
     color: var(--text);
   }
 
@@ -447,7 +447,7 @@ body.body--light {
     }
 
     [sfc-name='QTabs'] {
-      background: var(--base);
+      background-color: var(--base);
 
       .q-tab {
         color: var(--text);
@@ -458,7 +458,7 @@ body.body--light {
       }
 
       .q-tab__indicator {
-        background: var(--selection-bg);
+        background-color: var(--selection-bg);
       }
     }
   }
@@ -467,10 +467,10 @@ body.body--light {
 
   /* Menu & Pop-ups */
   .q-menu {
-    background: var(--base);
+    background-color: var(--mantle);
 
     .q-hoverable:hover {
-      background: var(--selection-bg);
+      background-color: var(--selection-bg);
     }
 
     [sfc-name='ContextMenuIcon'],
@@ -507,6 +507,37 @@ body.body--light {
       .overlay-progress-bar {
         background: var(--text);
       }
+    }
+  }
+
+  /* General Popups using QCard */
+  [role='dialog'] [sfc-name='QCard'] {
+    background-color: var(--base);
+    color: var(--text);
+
+    .close {
+      color: var(--text);
+    }
+
+    .q-field__control {
+      background: var(--crust);
+      border-color: var(--selection-bg);
+
+      .q-field__native {
+        color: var(--text);
+      }
+
+      .q-field__label {
+        color: var(--subtext1);
+      }
+    }
+
+    .q-field__counter {
+      color: var(--subtext1);
+    }
+
+    .q-btn.bg-primary, .q-btn.bg-primary [sfc-name='QIcon'] {
+      color: var(--crust);
     }
   }
 
@@ -598,7 +629,11 @@ body.body--light {
       .themes-page {
         [sfc-name='QList'] [sfc-name='QBtn'].q-btn--actionable {
           background-color: transparent;
-          color: var(--text);
+          color: var(--accent);
+        }
+
+        [sfc-name='QExpansionItem'] [sfc-name='QList'] {
+          background-color: var(--mantle);
         }
       }
     }
@@ -712,12 +747,12 @@ body.body--light {
     .am-audio-settings {
       background: var(--base);
 
-      [sfc-name='QItemLabel'], [sfc-name='QTab'][aria-selected='false'] {
+      [sfc-name='QItemLabel'], [sfc-name='QTab'][aria-selected='false'], .close {
         color: var(--text);
       }
 
       [sfc-name='AMEQ'] {
-        .mini, .close {
+        .mini {
           color: var(--text);
         }
 
