@@ -511,7 +511,7 @@ body.body--light {
     background-color: var(--base);
     color: var(--text);
 
-    .close, [sfc-name='QItem'], .q-btn__content {
+    .close, [sfc-name='QItem'], [sfc-name='QBtn']:not(.bg-red, .bg-primary).q-btn__content {
       color: var(--text);
     }
 
@@ -867,6 +867,12 @@ body.body--light {
   /* Immersive Browser Toolbar */
   .im-toolbar {
     background: var(--base);
+  }
+
+  .im-window-controls {
+    .close {
+      color: var(--text);
+    }
   }
 
   .immersive-player {

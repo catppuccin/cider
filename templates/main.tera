@@ -876,6 +876,12 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     background: var(--base);
   }
 
+  .im-window-controls {
+    .close {
+      color: var(--text);
+    }
+  }
+
   .immersive-player {
     [sfc-name='AMPMetadataMojave'] {
       .song-name {
