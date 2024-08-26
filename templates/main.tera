@@ -518,7 +518,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     background-color: var(--base);
     color: var(--text);
 
-    .close, [sfc-name='QItem'], .q-btn__content {
+    .close, [sfc-name='QItem'], [sfc-name='QBtn']:not(.bg-red, .bg-primary).q-btn__content {
       color: var(--text);
     }
 
