@@ -1011,5 +1011,9 @@ body.body--dark {
       background-color: var(--mantle);
       color: var(--text);
     }
+
+    [sfc-name='QBadge'] {
+      color: var(--crust);
+    }
   }
 }

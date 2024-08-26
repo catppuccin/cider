@@ -1018,5 +1018,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background-color: var(--mantle);
       color: var(--text);
     }
+
+    [sfc-name='QBadge'] {
+      color: var(--crust);
+    }
   }
 }
