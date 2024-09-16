@@ -130,8 +130,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   }
 
   .window-controls {
-    /* Windows Native Controls */
-    .window-control.minimize.isWin32:hover, .window-control.minmax.isWin32:hover {
+    .window-control.minimize.isWin32:hover,
+    .window-control.minmax.isWin32:hover,
+    .window-control.close:hover:after,
+    .window-control.close:after,
+    .window-control.minmax:hover:after,
+    .window-control.minmax:after,
+    .window-control.minimize:hover:after,
+    .window-control.minimize:after {
       background-color: var(--selection-bg);
     }
 
@@ -151,13 +157,8 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       background: var(--text);
     }
 
-    /* Multiplatform Window Controls */
     .window-control.close:hover {
       color: var(--red);
-    }
-
-    .window-control.close:hover:after, .window-control.close:after, .window-control.minmax:hover:after, .window-control.minmax:after, .window-control.minimize:hover:after, .window-control.minimize:after {
-      background-color: var(--selection-bg);
     }
 
     .window-control.minimize:hover, .window-control.minmax:hover {
