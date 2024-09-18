@@ -123,24 +123,39 @@ body.body--dark {
   }
 
   .window-controls {
-    .window-control.minimize:hover, .window-control.minmax:hover {
+    .window-control.minimize.isWin32:hover,
+    .window-control.minmax.isWin32:hover,
+    .window-control.close:hover:after,
+    .window-control.close:after,
+    .window-control.minmax:hover:after,
+    .window-control.minmax:after,
+    .window-control.minimize:hover:after,
+    .window-control.minimize:after {
       background-color: var(--selection-bg);
     }
 
-    .window-control.minimize:hover:before, .window-control.minmax:hover:before {
+    .window-control.minimize.isWin32:hover:before, .window-control.minmax.isWin32:hover:before {
       background-color: var(--accent);
     }
 
-    .window-control.close:hover {
+    .window-control.close.isWin32:hover {
       background-color: var(--red);
     }
 
-    .window-control.close.codicon:hover:before {
+    .window-control.close.codicon.isWin32:hover:before {
       background-color: var(--crust);
     }
 
-    .window-control.close:before, .window-control.minmax:before, .window-control.minimize:before {
+    .window-control.close.isWin32:before, .window-control.minmax.isWin32:before, .window-control.minimize.isWin32:before {
       background: var(--text);
+    }
+
+    .window-control.close:hover {
+      color: var(--red);
+    }
+
+    .window-control.minimize:hover, .window-control.minmax:hover {
+      color: var(--accent);
     }
   }
 
