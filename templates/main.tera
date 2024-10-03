@@ -11,6 +11,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   --accent: #{{ mauve.hex }};
   --text: #{{ text.hex }};
   --subtext1: #{{ subtext1.hex }};
+  --subtext0: #{{ subtext0.hex }};
   --overlay1: #{{ overlay1.hex }};
   --overlay0: #{{ overlay0.hex }};
   --surface0: #{{ surface0.hex }};
@@ -566,88 +567,82 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     /* Settings Window */
     .settings-window {
-      [sfc-name='QToolbar'] {
-        background: var(--crust);
+      .nav-area {
+        border-right-color: var(--surface0);
+      }
 
-        .q-tab__indicator {
-          background: var(--selection-bg);
+      [sfc-name='SettingsSidebar'] {
+        background-color: var(--mantle);
+
+        .settings-sidebar-item.selected {
+          color: var(--crust);
         }
       }
 
-      [sfc-name='QLayout'] {
-        background: var(--crust);
-      }
+      .content-area {
+        background-color: var(--base);
 
-      .bg-primary {
-        background: var(--selection-bg);
-      }
-
-      [sfc-name='QList'] {
-        background: var(--base);
-
-        .q-item__label {
-          color: var(--text);
-        }
-
-        .q-item__label--header {
-          color: var(--overlay1);
+        button.bg-primary.text-white {
+          color: var(--crust);
         }
 
         [sfc-name='QItemLabel'] {
-          .q-hoverable:hover {
-            background: var(--selection-bg);
-          }
+          color: var(--text);
         }
 
-        /* Dropdowns */
-        [sfc-name='QSlideTransition'] {
-          background: var(--mantle);
+        [sfc-name='QItemLabel'].text-caption {
+          color: var(--subtext1);
         }
 
-        [sfc-name='QItem'] {
-          /* Input Box */
-          [sfc-name='QInput'] {
-            .q-field__control {
-              background: var(--crust);
-              border-color: var(--selection-bg);
-            }
+        [sfc-name='SettingItem'] {
+          color: var(--subtext0);
 
-            .q-field__native {
-              color: var(--text);
-            }
-
-            .q-field__bottom {
-              color: var(--subtext1);
-            }
-          }
-
-          [sfc-name='QIcon'] {
+          .q-item__section [sfc-name='QIcon'] {
             color: var(--text);
           }
+        }
 
-          [sfc-name='QBtn'] {
-            background: var(--accent);
-            color: var(--base);
+        .q-expansion-item__content {
+          background-color: var(--mantle);
+        }
 
-            .block, [sfc-name='QIcon'] {
-              color: var(--base);
-            }
+        .q-slider__markers {
+          color: var(--mantle);
+        }
+
+        .q-field__control {
+          background-color: var(--crust);
+
+          input {
+            color: var(--text);
           }
         }
-      }
-
-      .q-dark {
-        color: var(--text);
-      }
-
-      [sfc-name='QCard'] {
-        color: var(--text);
       }
 
       .themes-page {
-        [sfc-name='QList'] [sfc-name='QBtn'].q-btn--actionable {
-          background-color: transparent;
-          color: var(--accent);
+        [sfc-name='QList'] {
+          [sfc-name='QBtn'].q-btn--actionable {
+            background-color: transparent;
+            color: var(--accent);
+          }
+
+          .cursor-pointer {
+            color: var(--text);
+          }
+
+          .bg-primary.text-white {
+            .q-item__label {
+              color: var(--crust);
+            }
+
+            text-caption {
+              color: var(--mantle);
+            }
+
+            [data-icon-name='check'] {
+              color: var(--crust);
+            }
+          }
         }
 
         [sfc-name='QExpansionItem'] [sfc-name='QList'] {
