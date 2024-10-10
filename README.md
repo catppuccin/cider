@@ -40,6 +40,9 @@
 2. Menu → Marketplace → Themes
 3. Find Catppuccin and your favorite flavor
 4. Click `Install`
+5. Menu → Settings → Extensions → Themes
+6. Enable the base theme
+7. (Optional) Enable an accent color alongside the base theme
 
 ## Notes
 
