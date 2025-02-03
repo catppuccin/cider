@@ -373,6 +373,12 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .replaced-btn:before {
       background: var(--surface0);
     }
+
+    [sfc-name='PowerSwoosh'] {
+      .powerswoosh-lockup-detail-title, .powerswoosh-lockup-detail-subtitle {
+        color: var(--text);
+      }
+    }
   }
 
   /* Left Drawer Content */
