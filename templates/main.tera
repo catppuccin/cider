@@ -293,17 +293,24 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    [sfc-name='Playlist'] {
-      .meta-description {
-        color: var(--subtext1);
-      }
+    [sfc-name='Playlist'], [sfc-name='Album'] {
+      [sfc-name='AlbumHeader'] {
+        [sfc-name='ArtistChip'] {
+          .chip-name, .chip-favorite .chip-fav-btn {
+            color: var(--accent);
+            opacity: 1;
+          }
+        }
 
-      .popularity-star {
-        color: var(--accent);
-      }
+        .top-metadata {
+          color: var(--subtext0);
+          opacity: 1;
+        }
 
-      .q-btn.primary-actions {
-        color: var(--base);
+        .blurb-text {
+          color: var(--subtext1);
+          opacity: 1;
+        }
       }
 
       [sfc-name='PlaylistSuggestions'] {
