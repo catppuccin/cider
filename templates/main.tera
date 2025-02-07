@@ -313,6 +313,24 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         }
       }
 
+      .tracks-container {
+        .selected {
+          color: var(--crust);
+
+          button.menu-btn:not(:active) {
+            color: var(--crust);
+          }
+
+          [sfc-name='PlayingIndicator'] {
+            --eq-bars-bg-color: var(--crust);
+          }
+        }
+
+        .popularity-dot {
+          color: var(--accent);
+        }
+      }
+
       [sfc-name='PlaylistSuggestions'] {
         background: var(--mantle);
 
