@@ -453,8 +453,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         --defaultColor: var(--accent);
       }
 
-      .lyric-text {
+      .lyric-text, .lyric-text-translated {
         color: var(--text);
+        opacity: 1;
       }
 
       .active {
@@ -898,7 +899,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       --gradientColor: var(--accent);
     }
 
-    .lyric-text {
+    .lyric-text, .lyric-text-translated {
       color: var(--text);
     }
 
@@ -977,8 +978,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         --gradientColor: var(--accent);
       }
 
-      .lyric-text {
+      .lyric-text, .lyric-text-translated {
         color: var(--text);
+        opacity: 1;
       }
 
       .active {
