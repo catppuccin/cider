@@ -173,7 +173,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
   /* Select Box */
   [sfc-name='CSelect'] {
-    .c-select, [data-v-c081d946] {
+    select {
       background-color: var(--crust);
       border-color: var(--selection-bg);
       color: var(--text);
