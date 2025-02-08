@@ -531,7 +531,8 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     [sfc-name='ContextMenuIcon'],
     [sfc-name='QItem']:hover [sfc-name='QIcon'],
-    [sfc-name='CascadeItem']:hover [sfc-name='QIcon'] {
+    [sfc-name='CascadeItem']:hover [sfc-name='QIcon'],
+    [sfc-name="VueFeather"] {
       color: var(--accent);
     }
 
