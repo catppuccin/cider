@@ -1,4 +1,4 @@
- ---
+---
 whiskers:
   version: 2.4.0
   matrix:
@@ -19,7 +19,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   --mantle: #{{ mantle.hex }};
   --crust: #{{ crust.hex }};
 
-  --selection-bg: {{ overlay2 | mod(opacity=0.3) | css_rgba }};
+  --selection-bg: {{ mauve | mod(opacity=0.3) | css_rgba }};
   --red: #{{ red.hex }};
   --green: #{{ green.hex }};
   --blue: #{{ blue.hex }};
@@ -32,12 +32,11 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   --systemPrimary: var(--text);
   --systemSecondary: var(--accent);
   --systemTertiary: var(--surface0);
-  --systemQuinary: var(--surface0);
+  --systemQuinary: var(--selection-bg);
   --systemQuaternary: var(--selection-bg);
   --keyColor: var(--accent);
   --musicKeyColor: var(--accent);
   --tracklistAltRowColor: var(--mantle);
-  --tracklistHoverColor: var(--selection-bg);
   --vibrantDivider: var(--surface0);
   --q-primary: var(--accent);
   --q-info: var(--blue);
@@ -165,10 +164,6 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .window-control.minimize:hover, .window-control.minmax:hover {
       color: var(--accent);
     }
-  }
-
-  .q-focus-helper { /* Global-ish Hover Selector */
-    background-color: var(--selection-bg);
   }
 
   /* Select Box */
@@ -314,7 +309,11 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
 
       .tracks-container {
-        .selected {
+        /* Specificity override due to some track lists having different classes */
+        .track-list {
+          color: var(--text);
+
+          .selected {
           color: var(--crust);
 
           button.menu-btn:not(:active) {
@@ -323,6 +322,23 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
           [sfc-name='PlayingIndicator'] {
             --eq-bars-bg-color: var(--crust);
+          }
+
+          [sfc-name='Explicit'] {
+            svg {
+              fill: var(--crust);
+            }
+          }
+          }
+
+          [sfc-name='PlaylistTrack']:not(.selected), [sfc-name='AlbumTrack']:not(.selected) {
+            .artist-link, .artist-section, .album-section, button.menu-btn {
+              color: var(--accent);
+            }
+          }
+
+          .ri-list-item:hover:not(.selected) {
+            background-color: var(--selection-bg)
           }
         }
 
@@ -408,21 +424,15 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       color: var(--accent);
     }
 
-    .sidebar_nav-btn:active{
-        background: var(--selection-bg);
-        color: var(--accent);
+    .sidebar_nav-btn:active, .active {
+      background: var(--accent);
 
-        .nav-icon {
-          color: var(--accent);
-        }
-    }
+      .nav-icon {
+        color: var(--crust);
+      }
 
-    .active {
-      background: var(--selection-bg);
-      color: var(--text);
-
-      .nav-icon, .nav-text {
-        color: var(--accent);
+      .nav-text {
+        color: var(--crust);
       }
     }
 
@@ -432,6 +442,18 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     [sfc-name='QTabs'] {
       background-color: var(--mantle);
+
+      .q-tab__indicator {
+        background-color: var(--accent);
+      }
+
+      .q-tab--inactive {
+        color: var(--text);
+      }
+
+      .q-tab--active {
+        color: var(--crust);
+      }
     }
 
     [sfc-name='PageTabList'] {
@@ -949,11 +971,11 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
 
       .q-tab--active {
-        color: var(--accent);
+        color: var(--crust);
       }
 
       .q-tab__indicator {
-        background: var(--selection-bg);
+        background: var(--accent);
       }
     }
 
