@@ -875,6 +875,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         color: var(--text);
       }
 
+      /* Equalizer */
       [sfc-name='AMEQ'] {
         .mini {
           color: var(--text);
