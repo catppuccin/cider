@@ -228,7 +228,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  [sfc-name='QueueButton'].active {
+  [sfc-name='QueueButton'].active, [title='Lyrics'].active {
     color: var(--accent);
   }
 
@@ -241,7 +241,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
   /* Contents */
 
   /* Center Content Pane */
-  [sfc-name='QLayout'] {
+  [sfc-name='RouterView'] {
     background: var(--base);
     color: var(--text);
 
@@ -1111,7 +1111,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       --progressColor: var(--text);
     }
 
-    [sfc-name='ImmersiveMetadata'] {
+    .immersive-lcd-metadata {
       .lcd-meta__secondary {
         color: var(--subtext0);
       }
