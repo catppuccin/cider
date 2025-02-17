@@ -269,6 +269,12 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           }
         }
 
+        [sfc-name='AlbumActions'] {
+          [sfc-name="MoreBtn"] {
+            color: var(--accent);
+          }
+        }
+
         .top-metadata {
           color: var(--subtext0);
           opacity: 1;
@@ -352,6 +358,12 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           .q-item-type {
             border-top-color: var(--overlay1);
           }
+        }
+      }
+
+      [sfc-name='MediaItemSlider'] {
+        button button::before {
+          color: var(--accent);
         }
       }
     }
