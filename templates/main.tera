@@ -222,6 +222,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
+  /* Autoplay Icon when autoplay is enabled. */
   [sfc-name='QueueButton'] {
     .autoplay-badge {
       color: var(--crust);
