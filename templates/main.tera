@@ -232,8 +232,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     color: var(--accent);
   }
 
-  [title='Lyrics'].active {
-    color: var(--accent);
+  [sfc-name='Explicit'] {
+    svg {
+      fill: var(--accent);
+    }
   }
 
   /* Contents */
@@ -255,36 +257,6 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
       .chip-favorite [sfc-name='QIcon'] {
         color: var(--accent);
-      }
-    }
-
-    [sfc-name='ListItem'] {
-      .title-text {
-        color: var(--text);
-      }
-
-      .albumLink, .time, .trackNumber {
-        color: var(--subtext1);
-      }
-
-      .artist-text {
-        color: var(--accent);
-      }
-    }
-
-    [sfc-name='QCardActions'] {
-      .playbtn {
-        ._svg-icon {
-          background: var(--base);
-        }
-      }
-
-      [sfc-name='QIcon'], [sfc-name='VueFeather'] {
-        color: var(--accent);
-
-        [fill=white] {
-          fill: var(--accent);
-        }
       }
     }
 
@@ -398,6 +370,39 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           color: var(--subtext1);
         }
       }
+
+      /* Artist Page Header */
+      [sfc-name='QCardActions'] {
+        .playbtn {
+          ._svg-icon {
+            background: var(--base);
+          }
+        }
+
+        [sfc-name='QIcon'], [sfc-name='VueFeather'] {
+          color: var(--accent);
+
+          [fill=white] {
+            fill: var(--accent);
+          }
+        }
+      }
+
+      .artist-top {
+        .pinned-item {
+          .title-line {
+            color: var(--accent);
+          }
+        }
+
+        .artist-items {
+          [sfc-name='ListItemShort'] {
+            .content-album {
+              color: var(--accent);
+            }
+          }
+        }
+      }
     }
 
     .replaced-btn {
@@ -410,7 +415,41 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     [sfc-name='PowerSwoosh'] {
       .powerswoosh-lockup-detail-title, .powerswoosh-lockup-detail-subtitle {
-        color: var(--text);
+        color: var(--{{ if(cond=flavor.dark, t="text", f="crust") }});
+      }
+    }
+
+    [sfc-name='MediaItemSlider'] {
+      [sfc-name='QCard'], [sfc-name='MediaItem'] {
+        .artistLink {
+          color: var(--accent);
+        }
+      }
+
+      .more-like-container {
+        .title {
+          color: var(--accent);
+        }
+      }
+    }
+
+    [section='recentlyPlayed'] {
+      [sfc-name='ListItemShort'] {
+        .content-artist {
+          color: var(--accent);
+        }
+      }
+    }
+
+    /* Top Right Buttons on For You and Home */
+    [title='Home Settings'] {
+      background-color: var(--mantle);
+      color: var(--accent);
+    }
+
+    [sfc-name='GroupingHeader'] {
+      button {
+        color: var(--accent);
       }
     }
   }
@@ -1019,6 +1058,13 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
+    /* History Tab */
+    [sfc-name='QCard'] [sfc-name='ListItemShort'] {
+      .content-artist {
+        color: var(--accent);
+      }
+    }
+
     [sfc-name='AMProgressWidget'] {
       .am-currenttime {
         color: var(--text);
@@ -1097,6 +1143,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     [sfc-name='CInput'] {
       background: var(--mantle);
     }
+
+    [sfc-name='RichAlbumGrid'] {
+      [sfc-name='RichAlbumGridItem'] {
+        .artistLink {
+          color: var(--accent);
+        }
+      }
+    }
   }
 
   /* Library Artists */
@@ -1124,6 +1178,14 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     .artist-toolbar, .q-page {
       background: var(--mantle);
     }
+
+    [sfc-name='RichAlbumGrid'] {
+      [sfc-name='RichAlbumGridItem'] {
+        .artistLink {
+          color: var(--accent);
+        }
+      }
+    }
   }
 
   /* Themes Page and Plugins Page */
@@ -1135,6 +1197,17 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
 
     [sfc-name='QBadge'] {
       color: var(--crust);
+    }
+  }
+
+  /* Recently Added */
+  [sfc-name='RecentlyAdded'] {
+    .mediaitem-grid {
+      [sfc-name='MediaItem'] {
+        .artistLink {
+          color: var(--accent);
+        }
+      }
     }
   }
 }
