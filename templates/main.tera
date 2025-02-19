@@ -95,7 +95,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         background: var(--mantle);
       }
 
-      --contextMenuTextColor: var(--text);
+      .volumeBar input.volume-range {
+        --progressColor: var(--accent);
+      }
     }
   }
 
@@ -110,7 +112,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    --contextMenuTextColor: var(--accent);
+    .volumeBar input.volume-range {
+      --progressColor: var(--accent);
+    }
   }
 
   #app-viewport[data-layout-type="maverick-if"] {
@@ -1127,7 +1131,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='AMVolumeSlider'] .volume-range {
-      --progressColor: var(--text);
+      --progressColor: var(--accent);
     }
 
     .immersive-lcd-metadata {
