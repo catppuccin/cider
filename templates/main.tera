@@ -250,6 +250,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     svg {
       fill: var(--accent);
     }
+
+  /* See all / See More Right Arrow */
+  .see-all {
+    color: var(--accent);
   }
 
   /* Contents */
@@ -372,12 +376,6 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
           .q-item-type {
             border-top-color: var(--overlay1);
           }
-        }
-      }
-
-      [sfc-name='MediaItemSlider'] {
-        button button::before {
-          color: var(--accent);
         }
       }
     }
