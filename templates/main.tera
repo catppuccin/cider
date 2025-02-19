@@ -663,6 +663,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       color: var(--text);
     }
 
+    [sfc-name='QTabPanels'] {
+      background-color: var(--base);
+    }
+
     .q-field__control {
       background: var(--crust);
       border-color: var(--selection-bg);
