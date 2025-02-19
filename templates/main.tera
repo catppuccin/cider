@@ -75,7 +75,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         background: var(--mantle);
       }
 
-      --contextMenuTextColor: var(--text);
+      .volumeBar input.volume-range {
+        --progressColor: var(--accent);
+      }
     }
   }
 
@@ -130,7 +132,9 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
       }
     }
 
-    --contextMenuTextColor: var(--accent);
+    .volumeBar input.volume-range {
+      --progressColor: var(--accent);
+    }
   }
 
   .window-controls {
