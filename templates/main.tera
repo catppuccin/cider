@@ -274,7 +274,7 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
 
     [sfc-name='Playlist'], [sfc-name='Album'] {
-      [sfc-name='AlbumHeader'] {
+      [sfc-name='AlbumHeader'], [sfc-name='AlbumHeaderMobile'] {
         [sfc-name='ArtistChip'] {
           .chip-name, .chip-favorite .chip-fav-btn {
             color: var(--accent);
