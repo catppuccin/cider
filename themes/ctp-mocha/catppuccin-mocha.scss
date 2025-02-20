@@ -12,7 +12,7 @@ body.body--dark {
   --mantle: #181825;
   --crust: #11111b;
 
-  --selection-bg: rgba(147, 153, 178, 0.30);
+  --selection-bg: rgba(203, 166, 247, 0.30);
   --red: #f38ba8;
   --green: #a6e3a1;
   --blue: #89b4fa;
@@ -23,14 +23,13 @@ body.body--dark {
   color: var(--text);
   --textDefault: var(--text);
   --systemPrimary: var(--text);
-  --systemSecondary: var(--accent);
+  --systemSecondary: var(--text);
   --systemTertiary: var(--surface0);
-  --systemQuinary: var(--surface0);
+  --systemQuinary: var(--selection-bg);
   --systemQuaternary: var(--selection-bg);
   --keyColor: var(--accent);
   --musicKeyColor: var(--accent);
   --tracklistAltRowColor: var(--mantle);
-  --tracklistHoverColor: var(--selection-bg);
   --vibrantDivider: var(--surface0);
   --q-primary: var(--accent);
   --q-info: var(--blue);
@@ -69,7 +68,9 @@ body.body--dark {
         background: var(--mantle);
       }
 
-      --contextMenuTextColor: var(--text);
+      .volumeBar input.volume-range {
+        --progressColor: var(--accent);
+      }
     }
   }
 
@@ -89,7 +90,9 @@ body.body--dark {
         background: var(--mantle);
       }
 
-      --contextMenuTextColor: var(--text);
+      .volumeBar input.volume-range {
+        --progressColor: var(--accent);
+      }
     }
   }
 
@@ -98,13 +101,13 @@ body.body--dark {
       background: var(--base);
     }
 
-    [sfc-name='LCDPlayerMavericks'] {
-      .player {
-        background: var(--mantle);
-      }
+    [sfc-name='LCDPlayerMavericks'] .player {
+      background: var(--mantle);
     }
 
-    --contextMenuTextColor: var(--accent);
+    .volumeBar input.volume-range {
+      --progressColor: var(--accent);
+    }
   }
 
   #app-viewport[data-layout-type="maverick-if"] {
@@ -120,7 +123,9 @@ body.body--dark {
       }
     }
 
-    --contextMenuTextColor: var(--accent);
+    .volumeBar input.volume-range {
+      --progressColor: var(--accent);
+    }
   }
 
   .window-controls {
@@ -160,13 +165,14 @@ body.body--dark {
     }
   }
 
-  .q-focus-helper { /* Global-ish Hover Selector */
+  ::selection {
     background-color: var(--selection-bg);
+    color: var(--text);
   }
 
   /* Select Box */
   [sfc-name='CSelect'] {
-    .c-select, [data-v-c081d946] {
+    select {
       background-color: var(--crust);
       border-color: var(--selection-bg);
       color: var(--text);
@@ -201,6 +207,11 @@ body.body--dark {
     color: var(--text);
   }
 
+  /* Global Accented Buttons */
+  button.bg-primary {
+    color: var(--crust);
+  }
+
   [sfc-name='HeaderSearch'] {
     .search-box {
       background: var(--mantle);
@@ -215,24 +226,28 @@ body.body--dark {
     }
   }
 
-  [sfc-name='QueueButton'] {
-    .autoplay-badge {
-      color: var(--crust);
-    }
+  /* Autoplay Icon when autoplay is enabled. */
+  [sfc-name='QueueButton'] .autoplay-badge {
+    color: var(--crust);
   }
 
-  [sfc-name='QueueButton'].active {
+  [sfc-name='QueueButton'].active, [title='Lyrics'].active {
     color: var(--accent);
   }
 
-  [title='Lyrics'].active {
+  [sfc-name='Explicit'] svg {
+    fill: var(--accent);
+  }
+
+  /* See all / See More Right Arrow */
+  .see-all {
     color: var(--accent);
   }
 
   /* Contents */
 
   /* Center Content Pane */
-  [sfc-name='QLayout'] {
+  [sfc-name='RouterView'] {
     background: var(--base);
     color: var(--text);
 
@@ -251,47 +266,65 @@ body.body--dark {
       }
     }
 
-    [sfc-name='ListItem'] {
-      .title-text {
-        color: var(--text);
-      }
+    [sfc-name='Playlist'], [sfc-name='Album'] {
+      [sfc-name='AlbumHeader'], [sfc-name='AlbumHeaderMobile'] {
+        [sfc-name='ArtistChip'] {
+          .chip-name, .chip-favorite .chip-fav-btn {
+            color: var(--accent);
+            opacity: 1;
+          }
+        }
 
-      .albumLink, .time, .trackNumber {
-        color: var(--subtext1);
-      }
+        [sfc-name='AlbumActions'] [sfc-name="MoreBtn"] {
+          color: var(--accent);
+        }
 
-      .artist-text {
-        color: var(--accent);
-      }
-    }
+        .top-metadata {
+          color: var(--subtext0);
+          opacity: 1;
+        }
 
-    [sfc-name='QCardActions'] {
-      .playbtn {
-        ._svg-icon {
-          background: var(--base);
+        .blurb-text {
+          color: var(--subtext1);
+          opacity: 1;
         }
       }
 
-      [sfc-name='QIcon'], [sfc-name='VueFeather'] {
-        color: var(--accent);
+      .tracks-container {
+        /* Specificity override due to some track lists having different classes */
+        .track-list {
+          color: var(--text);
 
-        [fill=white] {
-          fill: var(--accent);
+          .selected {
+            color: var(--crust);
+
+            button.menu-btn:not(:active) {
+              color: var(--crust);
+            }
+
+            [sfc-name='PlayingIndicator'] {
+              --eq-bars-bg-color: var(--crust);
+            }
+
+            [sfc-name='Explicit'] svg {
+              fill: var(--crust);
+            }
+          }
+
+          [sfc-name='PlaylistTrack']:not(.selected), [sfc-name='AlbumTrack']:not(.selected) {
+            .artist-link, .artist-section, .album-section, button.menu-btn {
+              color: var(--accent);
+            }
+          }
+
+          .ri-list-item:hover:not(.selected) {
+            background-color: var(--selection-bg)
+          }
         }
-      }
-    }
 
-    [sfc-name='Playlist'] {
-      .meta-description {
-        color: var(--subtext1);
-      }
-
-      .popularity-star {
-        color: var(--accent);
-      }
-
-      .q-btn.primary-actions {
-        color: var(--base);
+        .popularity-dot {
+          color: var(--accent);
+        }
       }
 
       [sfc-name='PlaylistSuggestions'] {
@@ -345,6 +378,33 @@ body.body--dark {
           color: var(--subtext1);
         }
       }
+
+      /* Artist Page Header */
+      [sfc-name='QCardActions'] {
+        .playbtn ._svg-icon {
+          background: var(--base);
+        }
+
+        [sfc-name='QIcon'], [sfc-name='VueFeather'] {
+          color: var(--accent);
+
+          [fill=white] {
+            fill: var(--accent);
+          }
+        }
+      }
+
+      .artist-top {
+        .pinned-item .title-line {
+          color: var(--accent);
+        }
+
+        .artist-items [sfc-name='ListItemShort'] {
+          .content-album {
+            color: var(--accent);
+          }
+        }
+      }
     }
 
     .replaced-btn {
@@ -353,6 +413,40 @@ body.body--dark {
 
     .replaced-btn:before {
       background: var(--surface0);
+    }
+
+    [sfc-name='PowerSwoosh'] {
+      .powerswoosh-lockup-detail-title, .powerswoosh-lockup-detail-subtitle {
+        color: var(--text);
+      }
+    }
+
+    [sfc-name='MediaItemSlider'] {
+      [sfc-name='QCard'], [sfc-name='MediaItem'] {
+        .artistLink {
+          color: var(--accent);
+        }
+      }
+
+      .more-like-container .title {
+        color: var(--accent);
+      }
+    }
+
+    [section='recentlyPlayed'] {
+      [sfc-name='ListItemShort'] .content-artist {
+        color: var(--accent);
+      }
+    }
+
+    /* Top Right Buttons on For You and Home */
+    [title='Home Settings'] {
+      background-color: var(--mantle);
+      color: var(--accent);
+    }
+
+    [sfc-name='GroupingHeader'] button {
+      color: var(--accent);
     }
   }
 
@@ -365,21 +459,15 @@ body.body--dark {
       color: var(--accent);
     }
 
-    .sidebar_nav-btn:active{
-        background: var(--selection-bg);
-        color: var(--accent);
+    .sidebar_nav-btn:active, .active {
+      background: var(--accent);
 
-        .nav-icon {
-          color: var(--accent);
-        }
-    }
+      .nav-icon {
+        color: var(--crust);
+      }
 
-    .active {
-      background: var(--selection-bg);
-      color: var(--text);
-
-      .nav-icon, .nav-text {
-        color: var(--accent);
+      .nav-text {
+        color: var(--crust);
       }
     }
 
@@ -389,12 +477,22 @@ body.body--dark {
 
     [sfc-name='QTabs'] {
       background-color: var(--mantle);
-    }
 
-    [sfc-name='PageTabList'] {
-      .title-text {
+      .q-tab__indicator {
+        background-color: var(--accent);
+      }
+
+      .q-tab--inactive {
         color: var(--text);
       }
+
+      .q-tab--active {
+        color: var(--crust);
+      }
+    }
+
+    [sfc-name='PageTabList'] .title-text {
+      color: var(--text);
     }
   }
 
@@ -410,20 +508,17 @@ body.body--dark {
         --defaultColor: var(--accent);
       }
 
-      .lyric-text {
+      .lyric-text, .lyric-text-translated {
         color: var(--text);
+        opacity: 1;
       }
 
-      .active {
-        .lyric-text {
-          color: var(--accent);
-        }
+      .active .lyric-text {
+        color: var(--accent);
       }
 
-      .finished {
-        .lyric-text {
-          color: var(--accent);
-        }
+      .finished .lyric-text {
+        color: var(--accent);
       }
     }
 
@@ -452,6 +547,7 @@ body.body--dark {
 
       .remove-item-button {
         background: var(--red);
+
         .fa-solid {
           color: var(--base);
         }
@@ -487,7 +583,8 @@ body.body--dark {
 
     [sfc-name='ContextMenuIcon'],
     [sfc-name='QItem']:hover [sfc-name='QIcon'],
-    [sfc-name='CascadeItem']:hover [sfc-name='QIcon'] {
+    [sfc-name='CascadeItem']:hover [sfc-name='QIcon'],
+    [sfc-name="VueFeather"] {
       color: var(--accent);
     }
 
@@ -515,10 +612,8 @@ body.body--dark {
       }
     }
     /* For pop-up volume sliders */
-    [sfc-name='AMVolumeSlider'] {
-      .overlay-progress-bar {
-        background: var(--text);
-      }
+    [sfc-name='AMVolumeSlider'] .volumeBar .volume-range {
+      --progressColor: var(--accent);
     }
   }
 
@@ -529,6 +624,10 @@ body.body--dark {
 
     .close, [sfc-name='QItem'], [sfc-name='QBtn']:not(.bg-red, .bg-primary).q-btn__content {
       color: var(--text);
+    }
+
+    [sfc-name='QTabPanels'] {
+      background-color: var(--base);
     }
 
     .q-field__control {
@@ -683,14 +782,11 @@ body.body--dark {
         }
       }
 
-      [sfc-name='QCardSection'] {
-        table {
-          td {
-            color: var(--text);
-          }
-        }
+      [sfc-name='QCardSection'] table td {
+        color: var(--text);
       }
     }
+
     /* What's New Window */
     .tm-card {
       background: var(--base);
@@ -711,7 +807,8 @@ body.body--dark {
 
   /* CAL & Command Center */
   [sfc-name='QGlobalDialog'] {
-    .q-dialog-plugin { /* Close Dialog */
+    /* Close Dialog */
+    .q-dialog-plugin {
       background: var(--base);
       color: var(--text);
 
@@ -727,15 +824,14 @@ body.body--dark {
         background: var(--accent);
       }
 
-      [sfc-name='QBtn'] {
-        .q-btn__content {
-          color: var(--base);
-        }
+      [sfc-name='QBtn'] .q-btn__content {
+        color: var(--base);
       }
 
       [sfc-name='QItemSection'] {
         color: var(--text);
       }
+
       /* Search */
       [sfc-name='QInput'] {
         background: var(--mantle);
@@ -757,6 +853,7 @@ body.body--dark {
         color: var(--text);
       }
 
+      /* Equalizer */
       [sfc-name='AMEQ'] {
         .mini {
           color: var(--text);
@@ -823,12 +920,8 @@ body.body--dark {
   /* Modes */
 
   /* Miniplayer */
-  [sfc-name='MiniPlayerLayout'] {
-    [sfc-name='MiniPlayerControls'] {
-      .overlay-progress-bar {
-        --progressColor: var(--accent);
-      }
-    }
+  [sfc-name='MiniPlayerLayout'] [sfc-name='MiniPlayerControls'] .overlay-progress-bar {
+    --progressColor: var(--accent);
   }
 
   /* Coverflow Mode */
@@ -843,7 +936,7 @@ body.body--dark {
       }
 
       [sfc-name='AMVolumeSlider'] .volume-range {
-        --progressColor: var(--text);
+        --progressColor: var(--accent);
       }
     }
   }
@@ -855,14 +948,12 @@ body.body--dark {
       --gradientColor: var(--accent);
     }
 
-    .lyric-text {
+    .lyric-text, .lyric-text-translated {
       color: var(--text);
     }
 
-    .active {
-      .lyric-text {
-        color: var(--accent);
-      }
+    .active .lyric-text {
+      color: var(--accent);
     }
 
     .finished {
@@ -879,10 +970,8 @@ body.body--dark {
     background: var(--base);
   }
 
-  .im-window-controls {
-    .close {
-      color: var(--text);
-    }
+  .im-window-controls .close {
+    color: var(--text);
   }
 
   .immersive-player {
@@ -904,11 +993,11 @@ body.body--dark {
       }
 
       .q-tab--active {
-        color: var(--accent);
+        color: var(--crust);
       }
 
       .q-tab__indicator {
-        background: var(--selection-bg);
+        background: var(--accent);
       }
     }
 
@@ -922,11 +1011,10 @@ body.body--dark {
       }
     }
     /* Autoplay Icon */
-    .queue-item-list {
-      .q-icon {
-        color: var(--text);
-      }
+    .queue-item-list .q-icon {
+      color: var(--text);
     }
+
     /* Lyrics View */
     .lyricView {
       .lyric-word {
@@ -934,14 +1022,13 @@ body.body--dark {
         --gradientColor: var(--accent);
       }
 
-      .lyric-text {
+      .lyric-text, .lyric-text-translated {
         color: var(--text);
+        opacity: 1;
       }
 
-      .active {
-        .lyric-text {
-          color: var(--accent);
-        }
+      .active .lyric-text {
+        color: var(--accent);
       }
 
       .finished {
@@ -949,6 +1036,11 @@ body.body--dark {
           color: var(--accent);
         }
       }
+    }
+
+    /* History Tab */
+    [sfc-name='QCard'] [sfc-name='ListItemShort'] .content-artist {
+      color: var(--accent);
     }
 
     [sfc-name='AMProgressWidget'] {
@@ -994,7 +1086,11 @@ body.body--dark {
     }
 
     [sfc-name='AMVolumeSlider'] .volume-range {
-      --progressColor: var(--text);
+      --progressColor: var(--accent);
+    }
+
+    .immersive-lcd-metadata .lcd-meta__secondary {
+      color: var(--subtext0);
     }
   }
 
@@ -1012,16 +1108,18 @@ body.body--dark {
   /* Tabs */
 
   /* Library Songs */
-  [sfc-name='LibrarySongs'] {
-    .header-frow {
-      background: var(--base);
-    }
+  [sfc-name='LibrarySongs'] .header-frow {
+    background: var(--base);
   }
 
   /* Library Albums */
   [sfc-name='LibraryAlbums'] {
     [sfc-name='CInput'] {
       background: var(--mantle);
+    }
+
+    [sfc-name='RichAlbumGrid'] [sfc-name='RichAlbumGridItem'] .artistLink {
+      color: var(--accent);
     }
   }
 
@@ -1032,10 +1130,8 @@ body.body--dark {
         background: var(--selection-bg);
       }
 
-      .text-white {
-        [sfc-name='QItemLabel'] {
-          color: var(--accent);
-        }
+      .text-white [sfc-name='QItemLabel'] {
+        color: var(--accent);
       }
 
       [sfc-name='CInput'] {
@@ -1050,6 +1146,10 @@ body.body--dark {
     .artist-toolbar, .q-page {
       background: var(--mantle);
     }
+
+    [sfc-name='RichAlbumGrid'] [sfc-name='RichAlbumGridItem'] .artistLink {
+      color: var(--accent);
+    }
   }
 
   /* Themes Page and Plugins Page */
@@ -1062,5 +1162,10 @@ body.body--dark {
     [sfc-name='QBadge'] {
       color: var(--crust);
     }
+  }
+
+  /* Recently Added */
+  [sfc-name='RecentlyAdded'] .mediaitem-grid [sfc-name='MediaItem'] .artistLink {
+    color: var(--accent);
   }
 }
