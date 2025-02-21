@@ -677,6 +677,10 @@ body.body--dark {
         .settings-sidebar-item.selected {
           color: var(--crust);
         }
+
+        .settings-sidebar-item:not(.selected) .title-icon {
+          color: var(--accent);
+        }
       }
 
       .content-area {

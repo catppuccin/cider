@@ -684,6 +684,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
         .settings-sidebar-item.selected {
           color: var(--crust);
         }
+
+        .settings-sidebar-item:not(.selected) .title-icon {
+          color: var(--accent);
+        }
       }
 
       .content-area {
