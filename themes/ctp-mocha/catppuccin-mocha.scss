@@ -494,6 +494,10 @@ body.body--dark {
     [sfc-name='PageTabList'] .title-text {
       color: var(--text);
     }
+
+    [sfc-name='SidebarProfile'] .active {
+      color: var(--crust);
+    }
   }
 
   /* Right Drawer / Queue / Lyrics */
@@ -628,11 +632,15 @@ body.body--dark {
 
     [sfc-name='QTabPanels'] {
       background-color: var(--base);
+
+      /* Textbox fix present only in Discord Rich Presence Dialog */
+      .q-field__control {
+        background-color: transparent;
+      }
     }
 
     .q-field__control {
-      background: var(--crust);
-      border-color: var(--selection-bg);
+      background-color: var(--crust);
 
       .q-field__native {
         color: var(--text);
@@ -703,23 +711,42 @@ body.body--dark {
         }
 
         .q-field__control {
-          background-color: var(--crust);
-
           input {
             color: var(--text);
           }
+
+          .q-field__suffix {
+            color: var(--subtext0);
+          }
+        }
+
+        /* Scrobble Delay Number Input */
+        .q-field--standout.q-field--highlighted .q-field__control {
+          background-color: var(--selection-bg);
+        }
+
+        [sfc-name='QInput'].c-select .q-field__control {
+          background-color: var(--crust);
+        }
+
+        .q-field__control::before {
+          border-color: var(--selection-bg);
         }
       }
 
       .themes-page {
-        [sfc-name='QList'] {
-          [sfc-name='QBtn'].q-btn--actionable {
-            background-color: transparent;
-            color: var(--accent);
-          }
+        [sfc-name='QBtn'].q-btn--actionable {
+          background-color: transparent;
+          color: var(--accent);
+        }
 
+        [sfc-name='QList'] {
           .cursor-pointer {
             color: var(--text);
+
+            .cursor-pointer {
+              color: var(--accent);
+            }
           }
 
           .bg-primary.text-white {
@@ -739,6 +766,19 @@ body.body--dark {
 
         [sfc-name='QExpansionItem'] [sfc-name='QList'] {
           background-color: var(--mantle);
+        }
+      }
+
+      .plugins-page {
+        .q-btn--flat {
+          background-color: transparent;
+          color: var(--accent);
+        }
+
+        [sfc-name='QList'] {
+          .text-info + .q-btn {
+            color: var(--red);
+          }
         }
       }
     }
