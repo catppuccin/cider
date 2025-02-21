@@ -1171,8 +1171,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     }
   }
 
-  /* Recently Added */
-  [sfc-name='RecentlyAdded'] .mediaitem-grid [sfc-name='MediaItem'] .artistLink {
-    color: var(--accent);
+  /* Recently Added & Artist Feed */
+  [sfc-name='RecentlyAdded'], [sfc-name='ArtistFeed']  {
+    .mediaitem-grid [sfc-name='MediaItem'] .artistLink {
+      color: var(--accent);
+    }
   }
 }
