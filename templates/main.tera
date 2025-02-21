@@ -501,6 +501,10 @@ body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
     [sfc-name='PageTabList'] .title-text {
       color: var(--text);
     }
+
+    [sfc-name='SidebarProfile'] .active {
+      color: var(--crust);
+    }
   }
 
   /* Right Drawer / Queue / Lyrics */
