@@ -52,7 +52,7 @@ Immersive and Coverflow modes uses **dark-mode** theming in-app. If you're using
 
 ### Main Menu Accent Color
 
-The main menu can no longer be fully themed — only the highlight/accent color can be matched to your flavor. To do so, enable a custom accent color in Cider (Menu → Settings → Visual → Custom Accent Color) and set it to the hex value of `--accent` from your installed accent theme file (e.g. `catppuccin-accent-mauve.scss`, which contains `#cba6f7` for Mocha Mauve).
+The main menu can no longer be fully themed — only the highlight/accent color can be matched to your flavor. To do so, enable a custom accent color in Cider (**Menu** > **Settings** > **Visual** > **Custom Accent Color**) and set it to the hex value of `--accent` from your installed accent theme file (e.g. `catppuccin-accent-mauve.scss`, which contains `#cba6f7` for Mocha Mauve).
 
 ## 💝 Thanks to
 
