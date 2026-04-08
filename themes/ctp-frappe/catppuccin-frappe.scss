@@ -8,6 +8,8 @@ body.body--dark {
   --overlay1: #838ba7;
   --overlay0: #737994;
   --surface0: #414559;
+  --surface1: #51576d;
+  --surface2: #626880;
   --base: #303446;
   --mantle: #292c3c;
   --crust: #232634;
@@ -31,6 +33,14 @@ body.body--dark {
   --musicKeyColor: var(--accent);
   --tracklistAltRowColor: var(--mantle);
   --vibrantDivider: var(--surface0);
+  --qDark: ##303446;
+  --qDarkHUD: rgba(48, 52, 70, 0.66);
+  --qDarkPage: ##232634;
+  --q-dark: ##303446;
+  --q-dark-page: ##232634;
+  --mats-darkBackgroundBase: ##303446;
+  --mats-lightBackgroundBase: ##303446;
+  --contextMenuBorderColor: var(--surface0);
   --q-primary: var(--accent);
   --q-info: var(--blue);
 
@@ -251,25 +261,10 @@ body.body--dark {
     background: var(--base);
     color: var(--text);
 
-    .detail-content {
-      .blurb-text, .meta-data {
-        color: var(--subtext1);
-      }
-
-      .chip-name {
-        opacity: 1;
-        color: var(--accent);
-      }
-
-      .chip-favorite [sfc-name='QIcon'] {
-        color: var(--accent);
-      }
-    }
-
     [sfc-name='Playlist'], [sfc-name='Album'] {
       [sfc-name='AlbumHeader'], [sfc-name='AlbumHeaderMobile'] {
         [sfc-name='ArtistChip'] {
-          .chip-name, .chip-favorite .chip-fav-btn {
+          .chip-name {
             color: var(--accent);
             opacity: 1;
           }
@@ -405,14 +400,6 @@ body.body--dark {
           }
         }
       }
-    }
-
-    .replaced-btn {
-      color: var(--accent);
-    }
-
-    .replaced-btn:before {
-      background: var(--surface0);
     }
 
     [sfc-name='PowerSwoosh'] {
@@ -934,33 +921,6 @@ body.body--dark {
     }
   }
 
-  /* Themes / Plugins Card */
-  [data-v-ec8b2100][sfc-name='QCard'] {
-    background-color: var(--base);
-    color: var(--text);
-
-    [sfc-name='QItemLabel'], .title-text, [sfc-name='QItemSection'], button.close [sfc-name='QIcon'] {
-      color: var(--text);
-    }
-
-    button .qb-item-content {
-      color: var(--crust);
-    }
-  }
-
-  /* Multi Artist Picker */
-  .artist-picker-modal {
-    background-color: var(--base);
-
-    [sfc-name='QItemSection'], .modal-titlebar-content, .close {
-      color: var(--text);
-    }
-
-    .q-item-type+.q-item-type {
-      border-top-color: var(--surface0);
-    }
-  }
-
   /* Modes */
 
   /* Miniplayer */
@@ -1212,6 +1172,428 @@ body.body--dark {
   [sfc-name='RecentlyAdded'], [sfc-name='ArtistFeed']  {
     .mediaitem-grid [sfc-name='MediaItem'] .artistLink {
       color: var(--accent);
+    }
+  }
+
+  /* Media Item Rating */
+  [sfc-name='MediaItemRating'] {
+    .rating-icon {
+      color: var(--subtext0);
+    }
+  }
+
+  /* Window Style Picker */
+  [sfc-name='WindowStyle'] {
+    .layout-card {
+      background: var(--surface0);
+    }
+
+    .layout-card.selected {
+      border-color: var(--accent);
+    }
+  }
+
+  /* Solarium Player */
+  [sfc-name='SolariumPlayer'] {
+    .solarium-container {
+      background: var(--base);
+      color: var(--text);
+    }
+
+    .c-metadata {
+      .song-name {
+        color: var(--text);
+      }
+
+      .release-info, .source-info-display {
+        color: var(--subtext1);
+      }
+    }
+
+    .quality-badge {
+      background: var(--selection-bg);
+      color: var(--accent);
+    }
+
+    .pt-tab-bar {
+      background: var(--mantle);
+    }
+
+    .pt-tab {
+      color: var(--text);
+    }
+
+    .pt-tab--active {
+      color: var(--accent);
+    }
+
+    .cider-sidebar {
+      background: var(--crust);
+
+      .sidebar-group, .sidebar-widget {
+        background: var(--mantle);
+      }
+
+      .sidebar-icon {
+        color: var(--accent);
+      }
+
+      .sidebar-scroll-content {
+        color: var(--text);
+      }
+    }
+
+    .solarium-lyric-display {
+      .lyric-word {
+        --defaultColor: var(--text);
+        --gradientColor: var(--accent);
+      }
+
+      .lyric-text, .lyric-text-translated, .rich-lyric-line {
+        color: var(--text);
+        opacity: 1;
+      }
+
+      .active .lyric-text {
+        color: var(--accent);
+      }
+    }
+  }
+
+  /* Solarium Lyric Display */
+  [sfc-name='SolariumLyricDisplay'] {
+    .amp-lyrics_viewport, .rich-lyric-container {
+      background: var(--base);
+    }
+
+    .lyric-word {
+      --defaultColor: var(--text);
+      --gradientColor: var(--accent);
+    }
+
+    .lyric-text, .lyric-text-translated, .rich-lyric-line {
+      color: var(--text);
+      opacity: 1;
+    }
+
+    .active .lyric-text {
+      color: var(--accent);
+    }
+  }
+
+  /* Playlist Editor */
+  [sfc-name='PlaylistEditor'] {
+    background: var(--base);
+    color: var(--text);
+  }
+
+  /* Album (Standalone) */
+  [sfc-name='Album'] {
+    background: var(--base);
+    color: var(--text);
+  }
+
+  /* Library Artist / Library Artist View */
+  [sfc-name='LibraryArtist'], [sfc-name='LibraryArtistView'] {
+    background: var(--base);
+    color: var(--text);
+  }
+
+  /* ============================================================ */
+  /* Cider v4 Components */
+  /* ============================================================ */
+
+  /* Fix: Page Background */
+  .new-shell-page-container {
+    background: var(--base);
+  }
+
+  /* Concerts — Cards */
+  .concert-card {
+    background: var(--surface0);
+  }
+
+  .concert-card:hover {
+    background: var(--surface1);
+  }
+
+  .main-concert-card {
+    background: var(--surface0);
+  }
+
+  .concert-setlist-card {
+    background: var(--surface0);
+  }
+
+  /* Concerts — Date Badge */
+  .date-badge .month {
+    background: var(--red);
+    color: var(--text);
+  }
+
+  .date-badge .day {
+    background: var(--surface0);
+    color: var(--text);
+  }
+
+  /* Concerts — Action Buttons */
+  .main-concert-card .q-btn.bg-white {
+    background: var(--accent);
+    color: var(--crust);
+  }
+
+  /* LCD Players */
+  [sfc-name='LCDPlayer'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    color: var(--text);
+  }
+
+  [sfc-name='LCDPlayerGlass'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    color: var(--text);
+
+    .player {
+      background: var(--surface0);
+      box-shadow: inset 0 0 0 1px var(--overlay0);
+    }
+  }
+
+  [sfc-name='LCDPlayerTop'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    color: var(--text);
+
+    .artwork {
+      background: var(--surface0);
+    }
+  }
+
+  /* AMPLCD */
+  [sfc-name='AMPLCD'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    color: var(--text);
+
+    .player {
+      background: var(--surface0);
+      box-shadow: inset 0 0 0 1px var(--overlay0);
+    }
+  }
+
+  /* Concerts Pages */
+  [sfc-name='Concerts'] {
+    background: var(--base);
+    color: var(--text);
+  }
+
+  [sfc-name='ConcertsHub'] {
+    background: var(--base);
+    color: var(--text);
+  }
+
+  /* Concert Card Views */
+  [sfc-name='ConcertCardView'] {
+    background: var(--surface0);
+    color: var(--text);
+  }
+
+  [sfc-name='ConcertHubCardView'] {
+    background: var(--surface0);
+    color: var(--text);
+  }
+
+  /* PodcastsPage */
+  [sfc-name='PodcastsPage'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    color: var(--text);
+
+    .podcast-info-window {
+      --bgColor: var(--base);
+    }
+  }
+
+  /* SocialProfile */
+  [sfc-name='SocialProfile'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .profile-artwork {
+      background: var(--surface0);
+    }
+  }
+
+  /* SocialBadge */
+  [sfc-name='SocialBadge'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .social-badge {
+      background: var(--surface0);
+      border-color: var(--overlay0);
+    }
+  }
+
+  /* ChromeButton */
+  .chrome-button:hover {
+    background-color: var(--selection-bg);
+  }
+  .chrome-button.active {
+    background-color: var(--selection-bg);
+  }
+
+  /* NavFlipper */
+  [sfc-name='NavFlipper'] {
+    button {
+      color: var(--text);
+    }
+    button:before {
+      background-color: var(--selection-bg);
+    }
+  }
+
+  /* VolumePopup */
+  [sfc-name='VolumePopup'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .custom-volume-popup {
+      background: var(--surface0);
+    }
+    .custom-tooltip {
+      background: var(--crust);
+      color: var(--text);
+    }
+  }
+
+  /* CalendarDateBadge */
+  [sfc-name='CalendarDateBadge'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .date-badge {
+      background: var(--surface0);
+    }
+  }
+
+  /* UpcomingConcertBadge */
+  [sfc-name='UpcomingConcertBadge'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .upcoming-concert-badge {
+      background: var(--accent);
+      color: var(--crust);
+    }
+  }
+
+  /* LiveBadge */
+  [sfc-name='LiveBadge'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .overlay-progress-bar {
+      --progressColor: var(--text);
+    }
+  }
+
+  /* HUDBtn */
+  [sfc-name='HUDBtn'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .more-btn {
+      background-color: var(--surface0);
+      &:hover {
+        background-color: var(--surface1);
+      }
+      &:focus {
+        outline-color: var(--accent);
+      }
+    }
+  }
+
+  /* SuperHeroItem */
+  [sfc-name='SuperHeroItem'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .more-like-container {
+      .headline {
+        color: var(--subtext1);
+      }
+      .title {
+        color: var(--text);
+      }
+    }
+  }
+
+  /* PlaylistFolder */
+  [sfc-name='PlaylistFolder'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .folder-mosaic {
+      background: var(--surface0);
+      &.folder-mosaic--quad,
+      &.folder-mosaic--tri {
+        background: var(--surface1);
+      }
+    }
+    .mosaic-cell {
+      background: var(--surface0);
+    }
+    .mosaic-placeholder {
+      background: var(--surface0);
+    }
+  }
+
+  /* KeyBadge */
+  [sfc-name='KeyBadge'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+  }
+
+  /* AMPlaybackActions */
+  [sfc-name='AMPlaybackActions'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .playback-action-button {
+      &:before {
+        background: var(--surface1);
+      }
+      &.action-small.action-active {
+        color: var(--accent);
+      }
+    }
+  }
+
+  /* AMSidebar */
+  [sfc-name='AMSidebar'] {
+    --musicKeyColor: var(--accent);
+    --qDark: var(--base);
+    --qDarkHUD: var(--surface0);
+    .sidebar_nav-btn {
+      color: var(--text);
+      &:hover {
+        background: var(--surface1);
+      }
+      &:active {
+        background-color: var(--surface2);
+      }
+      &.active {
+        background: var(--accent);
+        color: var(--crust);
+      }
     }
   }
 }

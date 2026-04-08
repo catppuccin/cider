@@ -42,13 +42,17 @@
 4. Click `Install`
 5. Menu → Settings → Extensions → Themes
 6. Enable the base theme
-7. (Optional) Enable an accent color alongside the base theme
+7. (Optional) Enable an accent color alongside the base theme — see [note on accent colors](#main-menu-accent-color)
 
 ## Notes
 
 ### Immersive / Coverflow Mode
 
 Immersive and Coverflow modes uses **dark-mode** theming in-app. If you're using a Latte theme, it is recommended that you also **enable** a dark-mode theme (Frappé / Macchiato / Mocha) to have theming inside the Immersive and Coverflow modes.
+
+### Main Menu Accent Color
+
+The main menu can no longer be fully themed — only the highlight/accent color can be matched to your flavor. To do so, enable a custom accent color in Cider (**Menu** > **Settings** > **Visual** > **Custom Accent Color**) and set it to the hex value of `--accent` from your installed accent theme file (e.g. `catppuccin-accent-mauve.scss`, which contains `#cba6f7` for Mocha Mauve).
 
 ## 💝 Thanks to
 

@@ -1,12 +1,13 @@
 ---
 whiskers:
-  version: 2.4.0
+  version: "^2.4.0"
   matrix:
     - flavor
     - accent
   filename: "themes/ctp-{{ flavor.identifier }}/catppuccin-accent-{{ accent }}.scss"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 ---
 body.body--{{ if(cond=flavor.dark, t="dark", f="light") }} {
-  --accent: #{{ flavor.colors[accent].hex }};
+  --accent: {{ flavor.colors[accent].hex }};
   --selection-bg: {{ flavor.colors[accent] | mod(opacity=0.3) | css_rgba }};
 }
